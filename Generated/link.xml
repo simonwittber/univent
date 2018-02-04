@@ -1,0 +1,5 @@
+<linker>
+    <assembly fullname="Univent">
+        <type fullname="*" preserve="all"/>
+    </assembly>
+</linker>
