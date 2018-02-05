@@ -30,10 +30,10 @@ namespace DifferentMethods.Univents
             EditorGUI.LabelField(position, label, EditorStyles.label);
             var orProperty = property.FindPropertyRelative("mode");
             position.x += 128;
-            position.width -= 256;
+            position.width -= 164;
             EditorGUI.PropertyField(position, orProperty, GUIContent.none);
             position.x -= 128;
-            position.width += 256;
+            position.width += 164;
             DrawHeaderButtons(position, methodCallsProperty);
             position.y += 18;
             var indent = EditorGUI.indentLevel;

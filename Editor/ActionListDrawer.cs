@@ -28,8 +28,8 @@ namespace DifferentMethods.Univents
             var methodCallsProperty = property.FindPropertyRelative("calls");
             hotIndex = selectedMethodCall.intValue;
             GUI.Box(position, GUIContent.none);
-            EditorGUI.LabelField(position, label, EditorStyles.label);
-            DrawHeaderButtons(position, hotUnivent, methodCallsProperty);
+
+            DrawHeaderButtons(position, label, hotUnivent, methodCallsProperty);
             position.y += 18;
             if (hotUnivent.showDetail)
             {
@@ -72,8 +72,9 @@ namespace DifferentMethods.Univents
 
         void DrawDetailControls(Rect position, SerializedProperty property)
         {
-            position.width -= 3;
             position.height = 114;
+            position.x += 20;
+            position.width -= 23;
             GUI.Box(position, GUIContent.none);
             position.height = 16;
             EditorGUI.PropertyField(position, property.FindPropertyRelative("invokeOnce"));
@@ -89,12 +90,17 @@ namespace DifferentMethods.Univents
             EditorGUI.PropertyField(position, property.FindPropertyRelative("repeatDelay"));
         }
 
-        void DrawHeaderButtons(Rect position, ActionList hotUnivent, SerializedProperty methodCalls)
+        void DrawHeaderButtons(Rect position, GUIContent label, ActionList hotUnivent, SerializedProperty methodCalls)
         {
-            position.x += (position.width - (18 * 3));
+            var buttonX = position.x + (position.width - (18 * 3));
             position.width = 18;
-            position.height = 17;
             hotUnivent.showDetail = GUI.Toggle(position, hotUnivent.showDetail, "#", EditorStyles.miniButton);
+            position.x += 18;
+            position.width = buttonX - position.x;
+            EditorGUI.LabelField(position, label, EditorStyles.label);
+            position.width = 18;
+            position.x = buttonX;
+            position.height = 17;
             position.x += position.width;
             if (GUI.Button(position, "+", EditorStyles.miniButtonLeft))
             {
