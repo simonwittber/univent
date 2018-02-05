@@ -31,6 +31,7 @@ namespace DifferentMethods.Univents
             var orProperty = property.FindPropertyRelative("mode");
             position.x += 128;
             position.width -= 164;
+            position.height = 16;
             EditorGUI.PropertyField(position, orProperty, GUIContent.none);
             position.x -= 128;
             position.width += 164;

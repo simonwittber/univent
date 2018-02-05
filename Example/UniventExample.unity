@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -113,107 +113,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &145478447
+--- !u!1 &57548298
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 145478449}
-  - component: {fileID: 145478448}
+  - component: {fileID: 57548303}
+  - component: {fileID: 57548302}
+  - component: {fileID: 57548301}
+  - component: {fileID: 57548300}
+  - component: {fileID: 57548299}
+  - component: {fileID: 57548304}
   m_Layer: 0
-  m_Name: Directional Light (2)
+  m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!108 &145478448
-Light:
+--- !u!54 &57548299
+Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 145478447}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 0
-  m_Color: {r: 1, g: 0, b: 0.36862755, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &145478449
-Transform:
+  m_GameObject: {fileID: 57548298}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &57548300
+SphereCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 145478447}
-  m_LocalRotation: {x: -0.44681582, y: -0.2592131, z: 0.13706465, w: -0.8452085}
-  m_LocalPosition: {x: -0.89, y: 0.28, z: -2.03}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1645659098}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &415615202
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 415615206}
-  - component: {fileID: 415615205}
-  - component: {fileID: 415615204}
-  - component: {fileID: 415615203}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &415615203
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 415615202}
+  m_GameObject: {fileID: 57548298}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &415615204
+--- !u!23 &57548301
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 415615202}
+  m_GameObject: {fileID: 57548298}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -243,91 +195,99 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &415615205
+--- !u!33 &57548302
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 415615202}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &415615206
+  m_GameObject: {fileID: 57548298}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &57548303
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 415615202}
+  m_GameObject: {fileID: 57548298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23411894, y: 4.436558, z: -1.0628128}
+  m_LocalPosition: {x: -0.0681411, y: 7.07, z: -0.15431386}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &698258207
-GameObject:
+--- !u!114 &57548304
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 698258209}
-  - component: {fileID: 698258208}
-  m_Layer: 0
-  m_Name: Directional Light (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &698258208
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 698258207}
+  m_GameObject: {fileID: 57548298}
   m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 0
-  m_Color: {r: 0, g: 0.08817577, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4284367f5a75742d2826dbef3fba8407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &698258209
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 698258207}
-  m_LocalRotation: {x: 0.07143401, y: -0.8834811, z: 0.4402586, w: 0.14328574}
-  m_LocalPosition: {x: 0.38, y: 1.16, z: 0.79}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1645659098}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  onCollisionEnterEvent:
+    selectedCallIndex: 0
+    invokeOnce: 0
+    startDelay: 0
+    cooldownPeriod: 0
+    repeatDelay: 0
+    repeatCount: 0
+    probability: 1
+    showDetail: 0
+    calls:
+    - gameObject: {fileID: 57548298}
+      component: {fileID: 57548299}
+      metaMethodInfo:
+        className: UnityEnginePhysicsModule_Rigidbody_AddForce_Vector3
+        type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        name: AddForce
+        parameterTypeNames:
+        - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        niceName: Rigidbody.AddForce (force)
+        returnType: 
+      arguments:
+        objects:
+          keys: []
+          values: []
+        floats:
+          keys: []
+          values: []
+        ints:
+          keys: []
+          values: 
+        strings:
+          keys: []
+          values: []
+        bools:
+          keys: []
+          values: 
+        enums:
+          keys: []
+        vector3s:
+          keys:
+          - force
+          values:
+          - {x: 0, y: 200, z: 0}
+        vector2s:
+          keys: []
+          values: []
+        vector4s:
+          keys: []
+          values: []
+        colors:
+          keys: []
+          values: []
+        layerMasks:
+          keys: []
+          values: []
+      error: 
+    count: 0
 --- !u!1 &743941316
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,48 +369,257 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1645659096
+--- !u!1 &993721888
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1645659098}
-  - component: {fileID: 1645659097}
+  - component: {fileID: 993721890}
+  - component: {fileID: 993721889}
   m_Layer: 0
-  m_Name: LightController
+  m_Name: Directional Light (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1645659097
+--- !u!108 &993721889
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 993721888}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 0, g: 0.054581642, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &993721890
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 993721888}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 1.36, y: 7.63, z: -2.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1391573614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1391573618}
+  - component: {fileID: 1391573617}
+  - component: {fileID: 1391573616}
+  - component: {fileID: 1391573615}
+  - component: {fileID: 1391573619}
+  - component: {fileID: 1391573620}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1391573615
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391573614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1391573616
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391573614}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1391573617
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391573614}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1391573618
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391573614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0681411, y: 3.26, z: -0.15431386}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1391573619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1645659096}
+  m_GameObject: {fileID: 1391573614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4284367f5a75742d2826dbef3fba8407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  onCollisionEnterEvent:
+    selectedCallIndex: 0
+    invokeOnce: 0
+    startDelay: 0
+    cooldownPeriod: 0
+    repeatDelay: 0
+    repeatCount: 0
+    probability: 1
+    showDetail: 0
+    calls:
+    - gameObject: {fileID: 1391573614}
+      component: {fileID: 1391573620}
+      metaMethodInfo:
+        className: AssemblyCSharp_Observer_Trigger_
+        type: DifferentMethods.Univents.Observer, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        name: Trigger
+        parameterTypeNames: []
+        niceName: Observer.Trigger ()
+        returnType: 
+      arguments:
+        objects:
+          keys: []
+          values: []
+        floats:
+          keys: []
+          values: []
+        ints:
+          keys: []
+          values: 
+        strings:
+          keys: []
+          values: []
+        bools:
+          keys: []
+          values: 
+        enums:
+          keys: []
+        vector3s:
+          keys: []
+          values: []
+        vector2s:
+          keys: []
+          values: []
+        vector4s:
+          keys: []
+          values: []
+        colors:
+          keys:
+          - value
+          values:
+          - {r: 0.07919741, g: 0, b: 1, a: 1}
+        layerMasks:
+          keys: []
+          values: []
+      error: 
+    count: 0
+--- !u!114 &1391573620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391573614}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4baf41ddb682043e2b90fbaf4db6fd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkEveryFrame: 1
+  checkEveryFrame: 0
   invertPredicateResult: 0
   predicate:
     selectedCallIndex: 0
     mode: 1
     calls:
-    - gameObject: {fileID: 415615202}
-      component: {fileID: 415615203}
+    - gameObject: {fileID: 993721888}
+      component: {fileID: 993721889}
       metaMethodInfo:
-        className: UnityEnginePhysicsModule_BoxCollider_get_enabled_
-        type: UnityEngine.BoxCollider, UnityEngine.PhysicsModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
+        className: UnityEngineCoreModule_Light_get_enabled_
+        type: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
         name: get_enabled
         parameterTypeNames: []
-        niceName: Collider.get_enabled ()
+        niceName: Behaviour.get_enabled ()
         returnType: 
       arguments:
         objects:
@@ -486,8 +655,8 @@ MonoBehaviour:
           keys: []
           values: []
       error: 
-  onConditionSuccess:
-    selectedCallIndex: 0
+  onSuccess:
+    selectedCallIndex: 1
     invokeOnce: 0
     startDelay: 0
     cooldownPeriod: 0
@@ -496,8 +665,54 @@ MonoBehaviour:
     probability: 1
     showDetail: 0
     calls:
-    - gameObject: {fileID: 698258207}
-      component: {fileID: 698258208}
+    - gameObject: {fileID: 993721888}
+      component: {fileID: 993721889}
+      metaMethodInfo:
+        className: UnityEngineCoreModule_Light_set_enabled_Boolean
+        type: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        name: set_enabled
+        parameterTypeNames:
+        - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        niceName: Behaviour.Set enabled = (value)
+        returnType: 
+      arguments:
+        objects:
+          keys: []
+          values: []
+        floats:
+          keys: []
+          values: []
+        ints:
+          keys: []
+          values: 
+        strings:
+          keys: []
+          values: []
+        bools:
+          keys:
+          - value
+          values: 00
+        enums:
+          keys: []
+        vector3s:
+          keys: []
+          values: []
+        vector2s:
+          keys: []
+          values: []
+        vector4s:
+          keys: []
+          values: []
+        colors:
+          keys: []
+          values: []
+        layerMasks:
+          keys: []
+          values: []
+      error: 
+    - gameObject: {fileID: 1537010714}
+      component: {fileID: 1537010715}
       metaMethodInfo:
         className: UnityEngineCoreModule_Light_set_enabled_Boolean
         type: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -542,8 +757,65 @@ MonoBehaviour:
           keys: []
           values: []
       error: 
-    - gameObject: {fileID: 145478447}
-      component: {fileID: 145478448}
+    count: 0
+  onFailure:
+    selectedCallIndex: 1
+    invokeOnce: 0
+    startDelay: 0
+    cooldownPeriod: 0
+    repeatDelay: 0
+    repeatCount: 0
+    probability: 1
+    showDetail: 0
+    calls:
+    - gameObject: {fileID: 993721888}
+      component: {fileID: 993721889}
+      metaMethodInfo:
+        className: UnityEngineCoreModule_Light_set_enabled_Boolean
+        type: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        name: set_enabled
+        parameterTypeNames:
+        - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        niceName: Behaviour.Set enabled = (value)
+        returnType: 
+      arguments:
+        objects:
+          keys: []
+          values: []
+        floats:
+          keys: []
+          values: []
+        ints:
+          keys: []
+          values: 
+        strings:
+          keys: []
+          values: []
+        bools:
+          keys:
+          - value
+          values: 01
+        enums:
+          keys: []
+        vector3s:
+          keys: []
+          values: []
+        vector2s:
+          keys: []
+          values: []
+        vector4s:
+          keys: []
+          values: []
+        colors:
+          keys: []
+          values: []
+        layerMasks:
+          keys: []
+          values: []
+      error: 
+    - gameObject: {fileID: 1537010714}
+      component: {fileID: 1537010715}
       metaMethodInfo:
         className: UnityEngineCoreModule_Light_set_enabled_Boolean
         type: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -589,173 +861,68 @@ MonoBehaviour:
           values: []
       error: 
     count: 0
-  onConditionFailure:
-    selectedCallIndex: 0
-    invokeOnce: 0
-    startDelay: 0
-    cooldownPeriod: 0
-    repeatDelay: 0
-    repeatCount: 0
-    probability: 1
-    showDetail: 0
-    calls:
-    - gameObject: {fileID: 698258207}
-      component: {fileID: 698258208}
-      metaMethodInfo:
-        className: UnityEngineCoreModule_Light_set_cookie_Texture
-        type: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        name: set_cookie
-        parameterTypeNames:
-        - UnityEngine.Texture, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        niceName: Light.Set cookie = (value)
-        returnType: 
-      arguments:
-        objects:
-          keys: []
-          values: []
-        floats:
-          keys: []
-          values: []
-        ints:
-          keys: []
-          values: 
-        strings:
-          keys: []
-          values: []
-        bools:
-          keys:
-          - value
-          values: 00
-        enums:
-          keys: []
-        vector3s:
-          keys: []
-          values: []
-        vector2s:
-          keys: []
-          values: []
-        vector4s:
-          keys: []
-          values: []
-        colors:
-          keys: []
-          values: []
-        layerMasks:
-          keys: []
-          values: []
-      error: 
-    - gameObject: {fileID: 145478447}
-      component: {fileID: 145478448}
-      metaMethodInfo:
-        className: UnityEngineCoreModule_Light_SendMessageUpwards_String_SendMessageOptions
-        type: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        name: SendMessageUpwards
-        parameterTypeNames:
-        - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        niceName: Component.SendMessageUpwards (methodName, options)
-        returnType: 
-      arguments:
-        objects:
-          keys: []
-          values: []
-        floats:
-          keys: []
-          values: []
-        ints:
-          keys: []
-          values: 
-        strings:
-          keys:
-          - methodName
-          values:
-          - Test
-        bools:
-          keys:
-          - value
-          values: 01
-        enums:
-          keys:
-          - options
-        vector3s:
-          keys: []
-          values: []
-        vector2s:
-          keys: []
-          values: []
-        vector4s:
-          keys: []
-          values: []
-        colors:
-          keys: []
-          values: []
-        layerMasks:
-          keys: []
-          values: []
-      error: 
-    - gameObject: {fileID: 415615202}
-      component: {fileID: 0}
-      metaMethodInfo:
-        className: UnityEngineCoreModule_GameObject_SetActive_Boolean
-        type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        name: SetActive
-        parameterTypeNames:
-        - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        niceName: GameObject.SetActive (value)
-        returnType: 
-      arguments:
-        objects:
-          keys: []
-          values: []
-        floats:
-          keys: []
-          values: []
-        ints:
-          keys: []
-          values: 
-        strings:
-          keys: []
-          values: []
-        bools:
-          keys:
-          - value
-          values: 00
-        enums:
-          keys: []
-        vector3s:
-          keys: []
-          values: []
-        vector2s:
-          keys: []
-          values: []
-        vector4s:
-          keys: []
-          values: []
-        colors:
-          keys: []
-          values: []
-        layerMasks:
-          keys: []
-          values: []
-      error: 
-    count: 0
---- !u!4 &1645659098
+--- !u!1 &1537010714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1537010716}
+  - component: {fileID: 1537010715}
+  m_Layer: 0
+  m_Name: Directional Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1537010715
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537010714}
+  m_Enabled: 0
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 0.9433962, g: 0, b: 0, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1537010716
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1645659096}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.32, z: 0}
+  m_GameObject: {fileID: 1537010714}
+  m_LocalRotation: {x: 0.8625067, y: -0.11651781, z: 0.23110795, w: 0.43485048}
+  m_LocalPosition: {x: -1.05, y: 7.81, z: 1.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 698258209}
-  - {fileID: 145478449}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 126.48801, y: -30, z: 0}
