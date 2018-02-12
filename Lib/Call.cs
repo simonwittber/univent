@@ -60,11 +60,12 @@ namespace DifferentMethods.Univents
                 return;
             }
             foreach (var fi in encapsulatedMethodCall.GetType().GetFields())
+            {
                 if (fi.Name == "__component" && fi.FieldType.IsSubclassOf(typeof(Component)))
                 {
                     fi.SetValue(encapsulatedMethodCall, component);
                 }
-                else if (fi.Name == "__component" && fi.FieldType == typeof(GameObject))
+                else if (fi.Name == "__component" && fi.FieldType == typeof(UnityEngine.Object))
                 {
                     fi.SetValue(encapsulatedMethodCall, gameObject);
                 }
@@ -72,6 +73,7 @@ namespace DifferentMethods.Univents
                 {
                     fi.SetValue(encapsulatedMethodCall, arguments.Get(fi.Name, fi.FieldType));
                 }
+            }
         }
 
         public void OnBeforeSerialize()

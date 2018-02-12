@@ -5,7 +5,7 @@ using UnityEngine;
 namespace DifferentMethods.Univents
 {
 
-    [CustomPropertyDrawer(typeof(ActionList))]
+    [CustomPropertyDrawer(typeof(ActionList), true)]
     public class ActionListDrawer : CallListDrawer
     {
         int hotIndex = 0;

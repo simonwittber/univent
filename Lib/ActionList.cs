@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace DifferentMethods.Univents
 {
@@ -17,9 +18,15 @@ namespace DifferentMethods.Univents
         public float probability = 1;
         public bool showDetail;
         [SerializeField] List<MethodCall> calls = new List<MethodCall>();
-        [NonSerialized] internal bool invoked = false;
-        [NonSerialized] internal float nextCallTime = 0;
-        [SerializeField] internal int count = 0;
+        [NonSerialized] bool invoked = false;
+        [NonSerialized] float nextCallTime = 0;
+        [SerializeField] int count = 0;
+        List<Action> actions = new List<Action>();
+
+        public void AddListener(Action fn)
+        {
+            actions.Add(fn);
+        }
 
         public override IEnumerable<Call> GetCalls()
         {
@@ -48,17 +55,44 @@ namespace DifferentMethods.Univents
             }
         }
 
-        internal void InternalInvoke()
+        internal virtual void InternalInvoke()
         {
-            // Debug.Log("---------------" + this);
             foreach (var i in calls)
-            {
-                // Debug.Log(i);
                 i.Invoke();
-            }
-            // Debug.Log("................" + this);
+            foreach (var i in actions)
+                i();
         }
 
+    }
+
+    [System.Serializable]
+    public class ActionList<T> : ActionList
+    {
+        List<UnityAction<T>> actions = new List<UnityAction<T>>();
+
+        protected T arg;
+
+        public void Invoke(T arg)
+        {
+            this.arg = arg;
+            base.Invoke();
+        }
+
+        internal override void InternalInvoke()
+        {
+            base.InternalInvoke();
+            foreach (var i in actions) i(arg);
+        }
+
+        public void AddListener(UnityAction<T> fn)
+        {
+            actions.Add(fn);
+        }
+
+        public void RemoveListener(UnityAction<T> fn)
+        {
+            actions.Remove(fn);
+        }
     }
 
 }
