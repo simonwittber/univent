@@ -1,0 +1,9 @@
+{
+    "name": "DifferentMethods.Univents",
+    "references": [
+        "DifferentMethods.Extensions"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}

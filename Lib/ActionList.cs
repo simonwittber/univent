@@ -21,7 +21,7 @@ namespace DifferentMethods.Univents
         [NonSerialized] bool invoked = false;
         [NonSerialized] float nextCallTime = 0;
         [SerializeField] int count = 0;
-        List<Action> actions = new List<Action>();
+        HashSet<Action> actions = new HashSet<Action>();
 
         public void AddListener(Action fn)
         {
@@ -68,7 +68,7 @@ namespace DifferentMethods.Univents
     [System.Serializable]
     public class ActionList<T> : ActionList
     {
-        List<UnityAction<T>> actions = new List<UnityAction<T>>();
+        HashSet<UnityAction<T>> actions = new HashSet<UnityAction<T>>();
 
         protected T arg;
 
