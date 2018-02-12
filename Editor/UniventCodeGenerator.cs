@@ -63,7 +63,7 @@ namespace DifferentMethods.Univents
             methods.Clear();
             foreach (var t in CommonTypes)
                 if (t.GetCustomAttributes(typeof(ObsoleteAttribute), true).Length == 0)
-                    if (t.IsSubclassOf(typeof(Component)) && t != typeof(Behaviour) && t != typeof(MonoBehaviour))
+                    if (t == typeof(GameObject) || t.IsSubclassOf(typeof(Component)))
                         foreach (var mi in t.GetMethods())
                             if (IsSupportedMethod(mi))
                                 AddMethod(t, mi, compile: false);

@@ -20,7 +20,6 @@ namespace DifferentMethods.Univents
         [SerializeField] List<MethodCall> calls = new List<MethodCall>();
         [NonSerialized] bool invoked = false;
         [NonSerialized] float nextCallTime = 0;
-        [SerializeField] int count = 0;
         HashSet<Action> actions = new HashSet<Action>();
 
         public void AddListener(Action fn)
