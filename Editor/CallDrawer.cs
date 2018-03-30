@@ -31,7 +31,7 @@ namespace DifferentMethods.Univents
             position.x += 1;
             EditorGUI.BeginProperty(position, label, property);
             var indent = EditorGUI.indentLevel;
-            EditorGUI.indentLevel = 0;
+            // EditorGUI.indentLevel = 0;
             var gameObject = DrawGameObjectField(position, property);
             DrawMethodSelector(position, property, gameObject);
             position.y += 18;
