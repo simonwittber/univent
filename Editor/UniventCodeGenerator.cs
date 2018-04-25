@@ -191,8 +191,8 @@ namespace DifferentMethods.Univents
                 return false;
             if (m.ContainsGenericParameters)
                 return false;
-            if (m.IsSpecialName && m.Name.StartsWith("get_"))
-                return false;
+            // if (m.IsSpecialName && m.Name.StartsWith("get_"))
+            //     return false;
             if (!m.IsPublic)
                 return false;
             if (m.IsStatic || m.IsAbstract || m.IsConstructor || m.IsGenericMethod)
