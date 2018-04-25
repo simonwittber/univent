@@ -38,6 +38,5 @@ namespace DifferentMethods.Univents
             firstResult = false;
             lastResult = currentResult;
         }
-
     }
 }

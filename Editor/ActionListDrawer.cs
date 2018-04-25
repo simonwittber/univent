@@ -94,13 +94,13 @@ namespace DifferentMethods.Univents
         {
             var buttonX = position.x + (position.width - (18 * 3));
             position.width = 18;
+            position.height = 17;
             hotUnivent.showDetail = GUI.Toggle(position, hotUnivent.showDetail, "#", EditorStyles.miniButton);
             position.x += 18;
             position.width = buttonX - position.x;
             EditorGUI.LabelField(position, label, EditorStyles.label);
             position.width = 18;
             position.x = buttonX;
-            position.height = 17;
             position.x += position.width;
             if (GUI.Button(position, "+", EditorStyles.miniButtonLeft))
             {

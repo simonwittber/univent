@@ -13,7 +13,7 @@ namespace DifferentMethods.Univents
             if (!enabled) return;
             if (encapsulatedMethodCall == null)
             {
-                error = $"{metaMethodInfo.className} is missing.";
+                error = $"{metaMethodInfo.className} is null.";
                 enabled = false;
             }
             else

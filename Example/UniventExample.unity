@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
+  m_IndirectSpecularColor: {r: 0.1802837, g: 0.22571404, b: 0.30692273, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -287,69 +287,6 @@ MonoBehaviour:
           keys: []
           values: []
       error: 
-    count: 0
---- !u!1 &311847679
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 311847682}
-  - component: {fileID: 311847681}
-  - component: {fileID: 311847680}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &311847680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 311847679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 391c9461908f04178a4f576ee9d5ea1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &311847681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 311847679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5c3a283b5aa2445480e41d668858eae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
---- !u!4 &311847682
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 311847679}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &743941316
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,8 +549,8 @@ MonoBehaviour:
     - gameObject: {fileID: 1391573614}
       component: {fileID: 1391573620}
       metaMethodInfo:
-        className: AssemblyCSharp_Observer_Trigger_
-        type: DifferentMethods.Univents.Observer, Assembly-CSharp, Version=0.0.0.0,
+        className: DifferentMethodsUnivents_Observer_Trigger_
+        type: DifferentMethods.Univents.Observer, DifferentMethods.Univents, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         name: Trigger
         parameterTypeNames: []
@@ -655,7 +592,6 @@ MonoBehaviour:
           keys: []
           values: []
       error: 
-    count: 0
 --- !u!114 &1391573620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +654,7 @@ MonoBehaviour:
           values: []
       error: 
   onSuccess:
-    selectedCallIndex: 2
+    selectedCallIndex: 1
     invokeOnce: 0
     startDelay: 0
     cooldownPeriod: 0
@@ -867,7 +803,6 @@ MonoBehaviour:
           keys: []
           values: []
       error: 
-    count: 0
   onFailure:
     selectedCallIndex: 2
     invokeOnce: 0
@@ -1018,7 +953,6 @@ MonoBehaviour:
           keys: []
           values: []
       error: 
-    count: 0
 --- !u!1 &1537010714
 GameObject:
   m_ObjectHideFlags: 0

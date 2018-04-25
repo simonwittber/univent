@@ -3,6 +3,9 @@ using System.Reflection;
 
 namespace DifferentMethods.Univents
 {
+    /// <summary>
+    /// Information about a MethodInfo instance.
+    /// </summary>
     [System.Serializable]
     public class MetaMethodInfo
     {
