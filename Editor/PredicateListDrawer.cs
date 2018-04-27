@@ -15,12 +15,13 @@ namespace DifferentMethods.Univents
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             var methodCallsProperty = property.FindPropertyRelative("calls");
-            var baseHeight = (methodCallsProperty.arraySize * 38) + 20;
+            var baseHeight = (methodCallsProperty.arraySize * 38) + 20 + 20;
             return baseHeight;
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
+            var rect = position;
             var hotUnivent = (CallList)fieldInfo.GetValue(property.serializedObject.targetObject);
             var selectedMethodCall = property.FindPropertyRelative("selectedCallIndex");
             var methodCallsProperty = property.FindPropertyRelative("calls");
@@ -30,12 +31,11 @@ namespace DifferentMethods.Univents
             EditorGUI.LabelField(position, label, EditorStyles.label);
             var orProperty = property.FindPropertyRelative("mode");
             position.x += 128;
-            position.width -= 164;
+            position.width -= 124;
             position.height = 16;
             EditorGUI.PropertyField(position, orProperty, GUIContent.none);
             position.x -= 128;
-            position.width += 164;
-            DrawHeaderButtons(position, methodCallsProperty);
+            position.width += 124;
             position.y += 18;
             var indent = EditorGUI.indentLevel;
             // EditorGUI.indentLevel = 0;
@@ -62,6 +62,7 @@ namespace DifferentMethods.Univents
             }
 
             EditorGUI.indentLevel = indent;
+            DrawFooterButtons(rect, methodCallsProperty);
             if (schedule != null)
             {
                 schedule();
@@ -70,13 +71,25 @@ namespace DifferentMethods.Univents
             EditorGUI.EndProperty();
         }
 
-        void DrawHeaderButtons(Rect position, SerializedProperty methodCalls)
+        void DrawFooterButtons(Rect position, SerializedProperty methodCalls)
         {
-            position.x += (position.width - (18 * 3));
-            position.width = 18;
-            position.height = 17;
+            position.x = position.xMax - 40;
+            position.y = position.yMax - 20;
+            position.height = 20;
+            position.width = 20;
+            GUI.color = Color.red;
+            GUI.enabled = (hotIndex >= 0 && hotIndex <= (methodCalls.arraySize - 1));
+            if (GUI.Button(position, new GUIContent("", "Click to remove selected call."), EditorStyles.radioButton))
+            {
+                if (hotIndex >= 0 && hotIndex <= (methodCalls.arraySize - 1))
+                {
+                    schedule += () => methodCalls.DeleteArrayElementAtIndex(hotIndex);
+                }
+            }
+            GUI.enabled = true;
             position.x += position.width;
-            if (GUI.Button(position, "+", EditorStyles.miniButtonLeft))
+            GUI.color = Color.green;
+            if (GUI.Button(position, new GUIContent("", "Click to add another call."), EditorStyles.radioButton))
             {
                 schedule += () =>
                 {
@@ -86,15 +99,12 @@ namespace DifferentMethods.Univents
                     p.Reset();
                 };
             }
-            position.x += position.width;
-            if (GUI.Button(position, "-", EditorStyles.miniButtonRight))
-            {
-                if (hotIndex >= 0 && hotIndex <= (methodCalls.arraySize - 1))
-                {
-                    schedule += () => methodCalls.DeleteArrayElementAtIndex(hotIndex);
-                }
-            }
+
+            GUI.color = Color.white;
+
         }
+
+
     }
 
 }
