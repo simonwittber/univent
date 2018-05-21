@@ -223,13 +223,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 57548298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4284367f5a75742d2826dbef3fba8407, type: 3}
+  m_Script: {fileID: 11500000, guid: 797c4e930e3f04c81ad9415d273c77eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  onCollisionEnterEvent:
+  messages: 16
+  actions:
     selectedCallIndex: 0
     invokeOnce: 0
     startDelay: 0
@@ -237,27 +235,34 @@ MonoBehaviour:
     repeatDelay: 0
     repeatCount: 0
     probability: 1
-    showDetail: 0
+    showDetail: 1
     calls:
     - gameObject: {fileID: 57548298}
       component: {fileID: 57548299}
       metaMethodInfo:
-        className: UnityEnginePhysicsModule_Rigidbody_AddForce_Vector3
+        className: UnityEnginePhysicsModule_Rigidbody_AddForce_Single_Single_Single
         type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         name: AddForce
         parameterTypeNames:
-        - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        niceName: Rigidbody.AddForce (force)
+        - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        niceName: Rigidbody.AddForce (x, y, z)
         returnType: 
       arguments:
         objects:
           keys: []
           values: []
         floats:
-          keys: []
-          values: []
+          keys:
+          - x
+          - y
+          - z
+          values:
+          - 0
+          - 200
+          - 0
         ints:
           keys: []
           values: 
@@ -270,10 +275,8 @@ MonoBehaviour:
         enums:
           keys: []
         vector3s:
-          keys:
-          - force
-          values:
-          - {x: 0, y: 200, z: 0}
+          keys: []
+          values: []
         vector2s:
           keys: []
           values: []
@@ -444,7 +447,6 @@ GameObject:
   - component: {fileID: 1391573617}
   - component: {fileID: 1391573616}
   - component: {fileID: 1391573615}
-  - component: {fileID: 1391573619}
   - component: {fileID: 1391573620}
   m_Layer: 0
   m_Name: Plane
@@ -522,76 +524,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1391573619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1391573614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4284367f5a75742d2826dbef3fba8407, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  onCollisionEnterEvent:
-    selectedCallIndex: 0
-    invokeOnce: 0
-    startDelay: 0
-    cooldownPeriod: 0
-    repeatDelay: 0
-    repeatCount: 0
-    probability: 1
-    showDetail: 0
-    calls:
-    - gameObject: {fileID: 1391573614}
-      component: {fileID: 1391573620}
-      metaMethodInfo:
-        className: DifferentMethodsUnivents_Observer_Trigger_
-        type: DifferentMethods.Univents.Observer, DifferentMethods.Univents, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        name: Trigger
-        parameterTypeNames: []
-        niceName: Observer.Trigger ()
-        returnType: 
-      arguments:
-        objects:
-          keys: []
-          values: []
-        floats:
-          keys: []
-          values: []
-        ints:
-          keys: []
-          values: 
-        strings:
-          keys: []
-          values: []
-        bools:
-          keys: []
-          values: 
-        enums:
-          keys: []
-        vector3s:
-          keys: []
-          values: []
-        vector2s:
-          keys: []
-          values: []
-        vector4s:
-          keys: []
-          values: []
-        colors:
-          keys:
-          - value
-          values:
-          - {r: 0.07919741, g: 0, b: 1, a: 1}
-        layerMasks:
-          keys: []
-          values: []
-      error: 
 --- !u!114 &1391573620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4baf41ddb682043e2b90fbaf4db6fd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkEveryFrame: 0
+  messages: 16
   invertPredicateResult: 0
   predicate:
     selectedCallIndex: 0
@@ -654,7 +586,7 @@ MonoBehaviour:
           values: []
       error: 
   onSuccess:
-    selectedCallIndex: 1
+    selectedCallIndex: 2
     invokeOnce: 0
     startDelay: 0
     cooldownPeriod: 0

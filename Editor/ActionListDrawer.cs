@@ -28,7 +28,7 @@ namespace DifferentMethods.Univents
             var selectedMethodCall = property.FindPropertyRelative("selectedCallIndex");
             var methodCallsProperty = property.FindPropertyRelative("calls");
             hotIndex = selectedMethodCall.intValue;
-            GUI.Box(position, GUIContent.none);
+            // GUI.Box(position, GUIContent.none);
 
             DrawHeaderButtons(position, label, hotUnivent, methodCallsProperty);
             position.y += 18;
@@ -129,9 +129,9 @@ namespace DifferentMethods.Univents
             var buttonX = position.x + (position.width - (18 * 3));
             position.width = 18;
             position.height = 17;
-            GUI.color = Color.yellow;
-            hotUnivent.showDetail = GUI.Toggle(position, hotUnivent.showDetail, new GUIContent("", "Click to view more options."), EditorStyles.radioButton);
-            position.x += 18;
+            GUI.color = Color.white;
+            hotUnivent.showDetail = EditorGUI.Foldout(position, hotUnivent.showDetail, new GUIContent("", "Click to view more options."));
+            // position.x += 18;
             position.width = buttonX - position.x;
             EditorGUI.LabelField(position, label, EditorStyles.label);
             GUI.color = Color.white;

@@ -3,21 +3,19 @@ using UnityEngine;
 
 namespace DifferentMethods.Univents
 {
-    public partial class Observer : UniventMessageComponent
+    public abstract class UniventMessageComponent : MonoBehaviour
     {
-        public bool invertPredicateResult = false;
-        public PredicateList predicate;
-        [Space]
-        public ActionList onSuccess, onFailure;
+        [EnumFlags]
+        public ObservationTrigger messages = ObservationTrigger.Update;
 
-        bool lastResult;
-        bool currentResult;
-        bool firstResult = true;
-
-        void OnEnable()
+        protected void Add<T>() where T : MessageSurrogate
         {
-            firstResult = true;
+            var c = gameObject.DefaultComponent<T>();
+            c.onMessage += this.Trigger;
+            c.hideFlags = HideFlags.HideAndDontSave | HideFlags.HideInInspector;
         }
+
+        public abstract void Trigger();
 
         void Awake()
         {
@@ -33,21 +31,6 @@ namespace DifferentMethods.Univents
             if (messages.HasFlag(ObservationTrigger.OnPointerEnter)) Add<OnPointerEnterSurrogate>();
             if (messages.HasFlag(ObservationTrigger.OnPointerClick)) Add<OnPointerClickSurrogate>();
             if (messages.HasFlag(ObservationTrigger.OnPointerExit)) Add<OnPointerExitSurrogate>();
-        }
-
-        public override void Trigger()
-        {
-            predicate.Invoke();
-            currentResult = invertPredicateResult ? !predicate.Result : predicate.Result;
-            if (firstResult || lastResult != currentResult)
-            {
-                if (currentResult)
-                    onSuccess.Invoke();
-                else
-                    onFailure.Invoke();
-            }
-            firstResult = false;
-            lastResult = currentResult;
         }
     }
 }

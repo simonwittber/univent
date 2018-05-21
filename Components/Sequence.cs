@@ -1,17 +1,10 @@
+using UnityEngine;
+
 namespace DifferentMethods.Univents
 {
-    public class Sequence : UniventComponent
+    public partial class Sequence : UniventMessageComponent
     {
-        public ActionList[] actionLists;
-
-        [System.NonSerialized] int index = 0;
-
-        void Update()
-        {
-            if (actionLists.Length > index)
-                actionLists[index].Invoke();
-            index = (index + 1) % actionLists.Length;
-        }
-
+        public ActionList actions;
+        public override void Trigger() => actions.Invoke();
     }
 }
