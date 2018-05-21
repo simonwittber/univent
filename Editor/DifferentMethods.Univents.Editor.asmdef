@@ -1,0 +1,12 @@
+{
+    "name": "DifferentMethods.Univents.Editor",
+    "references": [
+        "DifferentMethods.Univents"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "Editor"
+    ],
+    "allowUnsafeCode": false
+}
