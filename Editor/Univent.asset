@@ -5041,3 +5041,18 @@ MonoBehaviour:
     parameterTypeNames: []
     niceName: Observer.Trigger ()
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_get_enabled_
+    type: UnityEngine.Behaviour, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: get_enabled
+    parameterTypeNames: []
+    niceName: Behaviour.get_enabled ()
+    returnType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_GameObject_CompareTag_String
+    type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: CompareTag
+    parameterTypeNames:
+    - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: GameObject.CompareTag (tag)
+    returnType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089

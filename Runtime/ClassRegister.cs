@@ -27,11 +27,6 @@ namespace DifferentMethods.Univents
             return $"{type.Name}.{name} ({string.Join(", ", from i in mi.GetParameters() select i.Name)})";
         }
 
-        public static string GetNiceName(MethodInfo mi)
-        {
-            return GetNiceName(mi.DeclaringType, mi);
-        }
-
         public static string[] GetParameterTypeNames(MethodInfo mi)
         {
             return (from i in mi.GetParameters() select i.ParameterType.AssemblyQualifiedName).ToArray();

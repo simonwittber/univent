@@ -78,7 +78,7 @@ namespace DifferentMethods.Univents
             var mmi = new MetaMethodInfo();
             mmi.name = mi.Name;
             mmi.className = className;
-            mmi.niceName = ClassRegister.GetNiceName(mi);
+            mmi.niceName = ClassRegister.GetNiceName(type, mi);
             mmi.parameterTypeNames = ClassRegister.GetParameterTypeNames(mi);
             mmi.type = mi.DeclaringType.AssemblyQualifiedName;
             mmi.returnType = mi.ReturnType.AssemblyQualifiedName;

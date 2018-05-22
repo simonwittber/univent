@@ -257,7 +257,7 @@ namespace DifferentMethods.Univents
                 metaMethodInfo.FindPropertyRelative("className").stringValue = ClassRegister.GetClassName(componentType, mi);
                 metaMethodInfo.FindPropertyRelative("type").stringValue = componentType.AssemblyQualifiedName;
                 metaMethodInfo.FindPropertyRelative("name").stringValue = mi.Name;
-                metaMethodInfo.FindPropertyRelative("niceName").stringValue = ClassRegister.GetNiceName(mi);
+                metaMethodInfo.FindPropertyRelative("niceName").stringValue = ClassRegister.GetNiceName(componentType, mi);
                 var typeNames = ClassRegister.GetParameterTypeNames(mi);
                 var typeNamesProperty = metaMethodInfo.FindPropertyRelative("parameterTypeNames");
                 typeNamesProperty.ClearArray();

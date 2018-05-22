@@ -28,10 +28,10 @@ namespace DifferentMethods.Univents
             var selectedMethodCall = property.FindPropertyRelative("selectedCallIndex");
             var methodCallsProperty = property.FindPropertyRelative("calls");
             hotIndex = selectedMethodCall.intValue;
-            // GUI.Box(position, GUIContent.none);
+            GUI.Box(position, GUIContent.none);
 
             DrawHeaderButtons(position, label, hotUnivent, methodCallsProperty);
-            position.y += 18;
+            position.y += 36;
             if (hotUnivent.showDetail)
             {
                 DrawDetailControls(position, property);
@@ -61,7 +61,23 @@ namespace DifferentMethods.Univents
                 EditorGUI.PropertyField(position, methodCallsProperty.GetArrayElementAtIndex(i));
                 position.y += 38;
             }
-            DrawFooterButtons(rect, methodCallsProperty);
+            // DrawFooterButtons(rect, methodCallsProperty);
+            var dropped = DropArea(rect, "Drop GameObject here");
+            if (dropped != null)
+            {
+
+                schedule += () =>
+                {
+                    foreach (var i in dropped)
+                    {
+                        var idx = methodCallsProperty.arraySize;
+                        methodCallsProperty.InsertArrayElementAtIndex(idx);
+                        methodCallsProperty.serializedObject.ApplyModifiedProperties();
+                        var p = methodCallsProperty.GetArrayElementAtIndex(idx);
+                        p.FindPropertyRelative("gameObject").objectReferenceValue = i;
+                    }
+                };
+            }
             EditorGUI.indentLevel = indent;
             if (schedule != null)
             {
@@ -124,17 +140,17 @@ namespace DifferentMethods.Univents
 
         }
 
+
         void DrawHeaderButtons(Rect position, GUIContent label, ActionList hotUnivent, SerializedProperty methodCalls)
         {
-            var buttonX = position.x + (position.width - (18 * 3));
-            position.width = 18;
-            position.height = 17;
+            position.height = 18;
             GUI.color = Color.white;
-            hotUnivent.showDetail = EditorGUI.Foldout(position, hotUnivent.showDetail, new GUIContent("", "Click to view more options."));
-            // position.x += 18;
-            position.width = buttonX - position.x;
             EditorGUI.LabelField(position, label, EditorStyles.label);
+            position.y += position.height;
+            position.x += 9;
+            hotUnivent.showDetail = EditorGUI.Foldout(position, hotUnivent.showDetail, new GUIContent("Options", "Click to view more options."));
             GUI.color = Color.white;
+
         }
 
     }

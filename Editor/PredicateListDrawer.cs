@@ -15,7 +15,7 @@ namespace DifferentMethods.Univents
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             var methodCallsProperty = property.FindPropertyRelative("calls");
-            var baseHeight = (methodCallsProperty.arraySize * 38) + 20 + 20;
+            var baseHeight = (methodCallsProperty.arraySize * 38) + 20;
             return baseHeight;
         }
 
@@ -62,7 +62,23 @@ namespace DifferentMethods.Univents
             }
 
             EditorGUI.indentLevel = indent;
-            DrawFooterButtons(rect, methodCallsProperty);
+            // DrawFooterButtons(rect, methodCallsProperty);
+            var dropped = DropArea(rect, "Drop GameObject here");
+            if (dropped != null)
+            {
+
+                schedule += () =>
+                {
+                    foreach (var i in dropped)
+                    {
+                        var idx = methodCallsProperty.arraySize;
+                        methodCallsProperty.InsertArrayElementAtIndex(idx);
+                        methodCallsProperty.serializedObject.ApplyModifiedProperties();
+                        var p = methodCallsProperty.GetArrayElementAtIndex(idx);
+                        p.FindPropertyRelative("gameObject").objectReferenceValue = i;
+                    }
+                };
+            }
             if (schedule != null)
             {
                 schedule();

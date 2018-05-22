@@ -61,7 +61,7 @@ namespace DifferentMethods.Univents
             }
             foreach (var fi in encapsulatedMethodCall.GetType().GetFields())
             {
-                if (fi.Name == "__component" && fi.FieldType.IsSubclassOf(typeof(Component)))
+                if (fi.Name == "__component" && fi.FieldType.IsSubclassOf(typeof(Component)) && component != null)
                 {
                     fi.SetValue(encapsulatedMethodCall, component);
                 }
