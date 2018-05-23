@@ -65,7 +65,7 @@ namespace DifferentMethods.Univents
                 {
                     fi.SetValue(encapsulatedMethodCall, component);
                 }
-                else if (fi.Name == "__component" && fi.FieldType == typeof(UnityEngine.Object))
+                else if (fi.Name == "__component" && fi.FieldType == typeof(UnityEngine.GameObject))
                 {
                     fi.SetValue(encapsulatedMethodCall, gameObject);
                 }

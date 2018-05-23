@@ -28,7 +28,9 @@ namespace DifferentMethods.Univents
             var selectedMethodCall = property.FindPropertyRelative("selectedCallIndex");
             var methodCallsProperty = property.FindPropertyRelative("calls");
             hotIndex = selectedMethodCall.intValue;
-            GUI.Box(position, GUIContent.none);
+
+            if (methodCallsProperty.arraySize > 0)
+                GUI.Box(position, GUIContent.none);
 
             DrawHeaderButtons(position, label, hotUnivent, methodCallsProperty);
             position.y += 36;
@@ -143,12 +145,20 @@ namespace DifferentMethods.Univents
 
         void DrawHeaderButtons(Rect position, GUIContent label, ActionList hotUnivent, SerializedProperty methodCalls)
         {
-            position.height = 18;
+
             GUI.color = Color.white;
-            EditorGUI.LabelField(position, label, EditorStyles.label);
-            position.y += position.height;
-            position.x += 9;
-            hotUnivent.showDetail = EditorGUI.Foldout(position, hotUnivent.showDetail, new GUIContent("Options", "Click to view more options."));
+
+            if (methodCalls.arraySize == 0)
+                EditorGUI.HelpBox(position, $"Drop GameObjects here to add actions to the {label.text} event.", MessageType.Info);
+            else
+            {
+                position.height = 18;
+                label.text += " Actions:";
+                EditorGUI.LabelField(position, label, EditorStyles.label);
+                position.y += position.height;
+                position.x += 9;
+                hotUnivent.showDetail = EditorGUI.Foldout(position, hotUnivent.showDetail, new GUIContent("Options", "Click to view more options."));
+            }
             GUI.color = Color.white;
 
         }
