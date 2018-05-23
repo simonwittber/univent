@@ -32,6 +32,11 @@ namespace DifferentMethods.Univents
             foreach (var i in calls) yield return i;
         }
 
+        public void Reset()
+        {
+            invoked = false;
+        }
+
         public override void Invoke()
         {
             if (invokeOnce && invoked) return;
