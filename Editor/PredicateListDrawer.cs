@@ -22,7 +22,6 @@ namespace DifferentMethods.Univents
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var rect = position;
-            var hotUnivent = (CallList)fieldInfo.GetValue(property.serializedObject.targetObject);
             var selectedMethodCall = property.FindPropertyRelative("selectedCallIndex");
             var methodCallsProperty = property.FindPropertyRelative("calls");
             hotIndex = selectedMethodCall.intValue;
@@ -55,8 +54,6 @@ namespace DifferentMethods.Univents
                     GUI.Box(position, GUIContent.none);
                     GUI.backgroundColor = Color.white;
                 }
-                var calls = hotUnivent.GetCalls().ToArray();
-                hotCall = calls[i];
                 EditorGUI.PropertyField(position, methodCallsProperty.GetArrayElementAtIndex(i));
                 position.y += 38;
             }

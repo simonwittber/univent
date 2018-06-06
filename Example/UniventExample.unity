@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1802837, g: 0.22571404, b: 0.30692273, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -549,7 +549,7 @@ MonoBehaviour:
           PublicKeyToken=null
         name: get_enabled
         parameterTypeNames: []
-        niceName: Behaviour.get_enabled ()
+        niceName: Light.get_enabled ()
         returnType: 
       arguments:
         objects:
@@ -586,7 +586,7 @@ MonoBehaviour:
           values: []
       error: 
   onSuccess:
-    selectedCallIndex: 1
+    selectedCallIndex: 2
     invokeOnce: 0
     startDelay: 0
     cooldownPeriod: 0
@@ -604,7 +604,7 @@ MonoBehaviour:
         name: set_enabled
         parameterTypeNames:
         - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        niceName: Behaviour.Set enabled = (value)
+        niceName: Light.Set enabled = (value)
         returnType: 
       arguments:
         objects:
@@ -650,7 +650,7 @@ MonoBehaviour:
         name: set_enabled
         parameterTypeNames:
         - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        niceName: Behaviour.Set enabled = (value)
+        niceName: Light.Set enabled = (value)
         returnType: 
       arguments:
         objects:
@@ -687,7 +687,7 @@ MonoBehaviour:
           keys: []
           values: []
       error: 
-    - gameObject: {fileID: 1537010714}
+    - gameObject: {fileID: 993721888}
       component: {fileID: 0}
       metaMethodInfo:
         className: UnityEngineCoreModule_GameObject_set_name_String
@@ -696,7 +696,7 @@ MonoBehaviour:
         name: set_name
         parameterTypeNames:
         - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        niceName: Object.Set name = (value)
+        niceName: GameObject.Set name = (value)
         returnType: 
       arguments:
         objects:
@@ -712,11 +712,11 @@ MonoBehaviour:
           keys:
           - value
           values:
-          - zappy
+          - zxc
         bools:
           keys:
           - value
-          values: 01
+          values: 00
         enums:
           keys: []
         vector3s:
@@ -754,7 +754,7 @@ MonoBehaviour:
         name: set_enabled
         parameterTypeNames:
         - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        niceName: Behaviour.Set enabled = (value)
+        niceName: Light.Set enabled = (value)
         returnType: 
       arguments:
         objects:
@@ -800,7 +800,7 @@ MonoBehaviour:
         name: set_enabled
         parameterTypeNames:
         - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        niceName: Behaviour.Set enabled = (value)
+        niceName: Light.Set enabled = (value)
         returnType: 
       arguments:
         objects:
@@ -837,7 +837,7 @@ MonoBehaviour:
           keys: []
           values: []
       error: 
-    - gameObject: {fileID: 1537010714}
+    - gameObject: {fileID: 993721888}
       component: {fileID: 0}
       metaMethodInfo:
         className: UnityEngineCoreModule_GameObject_set_name_String
@@ -846,7 +846,7 @@ MonoBehaviour:
         name: set_name
         parameterTypeNames:
         - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        niceName: Object.Set name = (value)
+        niceName: GameObject.Set name = (value)
         returnType: 
       arguments:
         objects:
@@ -862,7 +862,7 @@ MonoBehaviour:
           keys:
           - value
           values:
-          - zippy
+          - qwe
         bools:
           keys:
           - value

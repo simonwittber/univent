@@ -6,7 +6,7 @@ namespace DifferentMethods.Univents
     [System.Serializable]
     public class Call
     {
-        public GameObject gameObject;
+        public UnityEngine.GameObject gameObject;
         public Component component;
         public MetaMethodInfo metaMethodInfo;
         public PolySerializer arguments;

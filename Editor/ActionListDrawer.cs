@@ -13,10 +13,11 @@ namespace DifferentMethods.Univents
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            var hotUnivent = (ActionList)fieldInfo.GetValue(property.serializedObject.targetObject);
+
             var methodCallsProperty = property.FindPropertyRelative("calls");
             var baseHeight = (methodCallsProperty.arraySize * 38) + 20 + 20;
-            if (hotUnivent.showDetail)
+            var showDetail = property.FindPropertyRelative("showDetail").boolValue;
+            if (showDetail)
                 baseHeight += 116;
             return baseHeight;
         }
@@ -24,7 +25,9 @@ namespace DifferentMethods.Univents
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var rect = position;
-            var hotUnivent = (ActionList)fieldInfo.GetValue(property.serializedObject.targetObject);
+            position.xMin += 18 * EditorGUI.indentLevel;
+            EditorGUI.indentLevel = 0;
+            // var hotUnivent = (ActionList)property.GetTargetObject();
             var selectedMethodCall = property.FindPropertyRelative("selectedCallIndex");
             var methodCallsProperty = property.FindPropertyRelative("calls");
             hotIndex = selectedMethodCall.intValue;
@@ -32,15 +35,15 @@ namespace DifferentMethods.Univents
             if (methodCallsProperty.arraySize > 0)
                 GUI.Box(position, GUIContent.none);
 
-            DrawHeaderButtons(position, label, hotUnivent, methodCallsProperty);
+            DrawHeaderButtons(position, label, property);
             position.y += 36;
-            if (hotUnivent.showDetail)
+            if (property.FindPropertyRelative("showDetail").boolValue)
             {
                 DrawDetailControls(position, property);
                 position.y += 116;
             }
             EditorGUI.BeginProperty(position, label, property);
-            var indent = EditorGUI.indentLevel;
+            // var indent = EditorGUI.indentLevel;
             // EditorGUI.indentLevel = 0;
 
             position.height = 36;
@@ -58,8 +61,8 @@ namespace DifferentMethods.Univents
                     GUI.Box(position, GUIContent.none);
                     GUI.backgroundColor = Color.white;
                 }
-                var calls = hotUnivent.GetCalls().ToArray();
-                hotCall = calls[i];
+                // var calls = hotUnivent.GetCalls().ToArray();
+                // hotCall = calls[i];
                 EditorGUI.PropertyField(position, methodCallsProperty.GetArrayElementAtIndex(i));
                 position.y += 38;
             }
@@ -80,7 +83,7 @@ namespace DifferentMethods.Univents
                     }
                 };
             }
-            EditorGUI.indentLevel = indent;
+            // EditorGUI.indentLevel = indent;
             if (schedule != null)
             {
                 schedule();
@@ -143,13 +146,14 @@ namespace DifferentMethods.Univents
         }
 
 
-        void DrawHeaderButtons(Rect position, GUIContent label, ActionList hotUnivent, SerializedProperty methodCalls)
+        void DrawHeaderButtons(Rect position, GUIContent label, SerializedProperty property)
         {
 
             GUI.color = Color.white;
-
-            if (methodCalls.arraySize == 0)
-                EditorGUI.HelpBox(position, $"Drop GameObjects here to add actions to the {label.text} event.", MessageType.Info);
+            if (property.FindPropertyRelative("calls").arraySize == 0)
+            {
+                EditorGUI.HelpBox(position, $"Drop Gameobjects here to setup {label.text}.", MessageType.Warning);
+            }
             else
             {
                 position.height = 18;
@@ -157,7 +161,8 @@ namespace DifferentMethods.Univents
                 EditorGUI.LabelField(position, label, EditorStyles.label);
                 position.y += position.height;
                 position.x += 9;
-                hotUnivent.showDetail = EditorGUI.Foldout(position, hotUnivent.showDetail, new GUIContent("Options", "Click to view more options."));
+                var showDetail = property.FindPropertyRelative("showDetail");
+                showDetail.boolValue = EditorGUI.Foldout(position, showDetail.boolValue, new GUIContent("Options", "Click to view more options."));
             }
             GUI.color = Color.white;
 

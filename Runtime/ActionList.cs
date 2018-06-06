@@ -22,6 +22,11 @@ namespace DifferentMethods.Univents
         [NonSerialized] float nextCallTime = 0;
         HashSet<Action> actions = new HashSet<Action>();
 
+        public bool IsInvoked
+        {
+            get { return invoked; }
+        }
+
         public void AddListener(Action fn)
         {
             actions.Add(fn);

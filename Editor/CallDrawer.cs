@@ -39,7 +39,14 @@ namespace DifferentMethods.Univents
             var metaMethodInfoProperty = property.FindPropertyRelative("metaMethodInfo");
             position.x += 128;
             position.width -= 128;
-            DrawFields(position, property, metaMethodInfoProperty);
+            using (var cc = new EditorGUI.ChangeCheckScope())
+            {
+                DrawFields(position, property, metaMethodInfoProperty);
+                if (cc.changed)
+                {
+                    EditorUtility.SetDirty(property.serializedObject.targetObject);
+                }
+            }
             EditorGUI.indentLevel = indent;
             EditorGUI.EndProperty();
         }
@@ -59,7 +66,8 @@ namespace DifferentMethods.Univents
             if (componentType == null) return;
             var mi = componentType.GetMethod(methodName, parameterTypes.ToArray());
             if (mi == null) return;
-            var arguments = CallListDrawer.hotCall.arguments;
+            var hotCall = property.GetTargetObject() as Call;
+            var arguments = hotCall.arguments;
             GUI.Box(position, GUIContent.none);
             foreach (var p in mi.GetParameters())
             {
@@ -166,6 +174,7 @@ namespace DifferentMethods.Univents
             }
             if (EditorGUI.EndChangeCheck())
             {
+
             }
             newObj = obj;
             rect.x += rect.width;
@@ -205,13 +214,14 @@ namespace DifferentMethods.Univents
         protected virtual GenericMenu CreateMenu(GameObject go, SerializedProperty property)
         {
             var menu = new GenericMenu();
+            var hotCall = property.GetTargetObject() as Call;
             if (go != null)
             {
 
                 var item = "GameObject/";
                 foreach (var mi in typeof(GameObject).GetMethods().OrderBy(x => x.Name))
                 {
-                    if (IsSupportedMethod(mi, property))
+                    if (IsSupportedMethod(mi, property, hotCall))
                     {
                         menu.AddItem(new GUIContent(item + ClassRegister.GetNiceName(typeof(GameObject), mi)), false, AddCall(go, property, null, mi));
                     }
@@ -222,7 +232,7 @@ namespace DifferentMethods.Univents
                     item = $"{ct.Name}/";
                     foreach (var mi in ct.GetMethods().OrderBy(x => x.Name))
                     {
-                        if (IsSupportedMethod(mi, property))
+                        if (IsSupportedMethod(mi, property, hotCall))
                         {
                             menu.AddItem(new GUIContent(item + ClassRegister.GetNiceName(ct, mi)), false, AddCall(go, property, c, mi));
                         }
@@ -233,11 +243,11 @@ namespace DifferentMethods.Univents
             return menu;
         }
 
-        protected virtual bool IsSupportedMethod(MethodInfo mi, SerializedProperty property)
+        protected virtual bool IsSupportedMethod(MethodInfo mi, SerializedProperty property, Call hotCall)
         {
-            if (CallListDrawer.hotCall.GetType() == typeof(MethodCall))
+            if (hotCall.GetType() == typeof(MethodCall))
                 return UniventCodeGenerator.IsSupportedMethod(mi);
-            if (CallListDrawer.hotCall.GetType() == typeof(PredicateCall))
+            if (hotCall.GetType() == typeof(PredicateCall))
                 return UniventCodeGenerator.IsSupportedFunction(mi, typeof(bool));
             return false;
         }

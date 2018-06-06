@@ -7,7 +7,7 @@ namespace DifferentMethods.Univents
 {
     public class CallListDrawer : PropertyDrawer
     {
-        [ThreadStatic] public static Call hotCall;
+        // [ThreadStatic] public static Call hotCall;
 
 
         public UnityEngine.Object[] DropArea(Rect position, string text)

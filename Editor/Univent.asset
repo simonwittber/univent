@@ -5056,3 +5056,43 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     niceName: GameObject.CompareTag (tag)
     returnType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_GameObject_SetActive_Boolean
+    type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: SetActive
+    parameterTypeNames:
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: GameObject.SetActive (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineParticleSystemModule_ParticleSystemRenderer_set_enableGPUInstancing_Boolean
+    type: UnityEngine.ParticleSystemRenderer, UnityEngine.ParticleSystemModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    name: set_enableGPUInstancing
+    parameterTypeNames:
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: ParticleSystemRenderer.Set enableGPUInstancing = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_GameObject_set_active_Boolean
+    type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_active
+    parameterTypeNames:
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: GameObject.Set active = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_GameObject_BroadcastMessage_String
+    type: GameObject
+    name: BroadcastMessage
+    parameterTypeNames:
+    - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: GameObject.BroadcastMessage (methodName)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: AssemblyCSharp_OverheadCamera_Shake_Single_Single
+    type: ShmupCreator.OverheadCamera, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: Shake
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: OverheadCamera.Shake (amount, duration)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
