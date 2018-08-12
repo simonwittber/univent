@@ -3,12 +3,12 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ce90cfb7c2e14909bb86c56b95e885b, type: 3}
+  m_Script: {fileID: 11500000, guid: ea6df0cccdc9b4dd6ba0dad50e7d9a81, type: 3}
   m_Name: Univent
   m_EditorClassIdentifier: 
   assemblyName: Univent
@@ -101,7 +101,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Transform.SetParent (parent)
+    niceName: Transform.SetParent (p)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_SetParent_Transform_Boolean
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -112,15 +112,6 @@ MonoBehaviour:
       PublicKeyToken=null
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     niceName: Transform.SetParent (parent, worldPositionStays)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Transform_Translate_Vector3
-    type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: Translate
-    parameterTypeNames:
-    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    niceName: Transform.Translate (translation)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_Translate_Vector3_Space
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -133,15 +124,14 @@ MonoBehaviour:
       PublicKeyToken=null
     niceName: Transform.Translate (translation, relativeTo)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Transform_Translate_Single_Single_Single
+  - className: UnityEngineCoreModule_Transform_Translate_Vector3
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     name: Translate
     parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Transform.Translate (x, y, z)
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Transform.Translate (translation)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_Translate_Single_Single_Single_Space
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -154,6 +144,16 @@ MonoBehaviour:
     - UnityEngine.Space, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     niceName: Transform.Translate (x, y, z, relativeTo)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Transform_Translate_Single_Single_Single
+    type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: Translate
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Transform.Translate (x, y, z)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_Translate_Vector3_Transform
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -178,15 +178,6 @@ MonoBehaviour:
       PublicKeyToken=null
     niceName: Transform.Translate (x, y, z, relativeTo)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Transform_Rotate_Vector3
-    type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: Rotate
-    parameterTypeNames:
-    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    niceName: Transform.Rotate (eulerAngles)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_Rotate_Vector3_Space
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -196,17 +187,16 @@ MonoBehaviour:
       PublicKeyToken=null
     - UnityEngine.Space, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Transform.Rotate (eulerAngles, relativeTo)
+    niceName: Transform.Rotate (eulers, relativeTo)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Transform_Rotate_Single_Single_Single
+  - className: UnityEngineCoreModule_Transform_Rotate_Vector3
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     name: Rotate
     parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Transform.Rotate (xAngle, yAngle, zAngle)
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Transform.Rotate (eulers)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_Rotate_Single_Single_Single_Space
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -220,15 +210,15 @@ MonoBehaviour:
       PublicKeyToken=null
     niceName: Transform.Rotate (xAngle, yAngle, zAngle, relativeTo)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Transform_Rotate_Vector3_Single
+  - className: UnityEngineCoreModule_Transform_Rotate_Single_Single_Single
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     name: Rotate
     parameterTypeNames:
-    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
     - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Transform.Rotate (axis, angle)
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Transform.Rotate (xAngle, yAngle, zAngle)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_Rotate_Vector3_Single_Space
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -242,6 +232,16 @@ MonoBehaviour:
       PublicKeyToken=null
     niceName: Transform.Rotate (axis, angle, relativeTo)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Transform_Rotate_Vector3_Single
+    type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: Rotate
+    parameterTypeNames:
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Transform.Rotate (axis, angle)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_RotateAround_Vector3_Vector3_Single
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -254,15 +254,6 @@ MonoBehaviour:
     - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     niceName: Transform.RotateAround (point, axis, angle)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Transform_LookAt_Transform
-    type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: LookAt
-    parameterTypeNames:
-    - UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    niceName: Transform.LookAt (target)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_LookAt_Transform_Vector3
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -273,6 +264,15 @@ MonoBehaviour:
     - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     niceName: Transform.LookAt (target, worldUp)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Transform_LookAt_Transform
+    type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: LookAt
+    parameterTypeNames:
+    - UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Transform.LookAt (target)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_LookAt_Vector3_Vector3
     type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -345,7 +345,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: Transform.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -353,7 +353,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: Transform.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -363,7 +363,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: Transform.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -371,7 +371,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: Transform.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -381,7 +381,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: Transform.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -389,7 +389,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: Transform.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -399,7 +399,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: Transform.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -407,7 +407,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: Transform.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Transform_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -416,7 +416,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: Transform.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_set_shadows_LightShadows
     type: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -666,6 +666,15 @@ MonoBehaviour:
     - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     niceName: Light.Set cullingMask = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Light_set_lightShadowCasterMode_LightShadowCasterMode
+    type: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_lightShadowCasterMode
+    parameterTypeNames:
+    - UnityEngine.LightShadowCasterMode, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    niceName: Light.Set lightShadowCasterMode = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_set_shadowRadius_Single
     type: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -696,7 +705,7 @@ MonoBehaviour:
     name: set_enabled
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Behaviour.Set enabled = (value)
+    niceName: Light.Set enabled = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_set_tag_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -704,7 +713,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: Light.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -712,7 +721,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: Light.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -722,7 +731,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: Light.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -730,7 +739,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: Light.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -740,7 +749,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: Light.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -748,7 +757,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: Light.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -758,7 +767,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: Light.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -766,7 +775,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: Light.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Light_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -775,7 +784,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: Light.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Renderer_set_lightmapTilingOffset_Vector4
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -979,7 +988,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: Renderer.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Renderer_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -987,7 +996,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: Renderer.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Renderer_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -997,7 +1006,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: Renderer.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Renderer_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1005,7 +1014,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: Renderer.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Renderer_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1015,7 +1024,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: Renderer.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Renderer_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1023,7 +1032,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: Renderer.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Renderer_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1033,7 +1042,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: Renderer.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Renderer_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1041,7 +1050,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: Renderer.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Renderer_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1050,7 +1059,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: Renderer.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_set_enabled_Boolean
     type: UnityEngine.Collider, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
@@ -1076,15 +1085,6 @@ MonoBehaviour:
     - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     niceName: Collider.Set contactOffset = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Collider_set_material_PhysicMaterial
-    type: UnityEngine.Collider, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_material
-    parameterTypeNames:
-    - UnityEngine.PhysicMaterial, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    niceName: Collider.Set material = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_set_sharedMaterial_PhysicMaterial
     type: UnityEngine.Collider, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -1094,13 +1094,22 @@ MonoBehaviour:
       PublicKeyToken=null
     niceName: Collider.Set sharedMaterial = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Collider_set_material_PhysicMaterial
+    type: UnityEngine.Collider, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_material
+    parameterTypeNames:
+    - UnityEngine.PhysicMaterial, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Collider.Set material = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_set_tag_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: Collider.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1108,7 +1117,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: Collider.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1118,7 +1127,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: Collider.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1126,7 +1135,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: Collider.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1136,7 +1145,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: Collider.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1144,7 +1153,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: Collider.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1154,7 +1163,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: Collider.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1162,7 +1171,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: Collider.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Collider_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1171,7 +1180,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: Collider.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Collider2D_set_density_Single
     type: UnityEngine.Collider2D, UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral,
@@ -1229,7 +1238,7 @@ MonoBehaviour:
     name: set_enabled
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Behaviour.Set enabled = (value)
+    niceName: Collider2D.Set enabled = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Collider2D_set_tag_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1237,7 +1246,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: Collider2D.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Collider2D_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1245,7 +1254,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: Collider2D.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Collider2D_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1255,7 +1264,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: Collider2D.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Collider2D_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1263,7 +1272,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: Collider2D.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Collider2D_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1273,7 +1282,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: Collider2D.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Collider2D_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1281,7 +1290,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: Collider2D.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Collider2D_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1291,7 +1300,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: Collider2D.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Collider2D_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1299,7 +1308,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: Collider2D.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Collider2D_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1308,7 +1317,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: Collider2D.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_set_velocity_Vector3
     type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
@@ -1410,6 +1419,159 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
     niceName: Rigidbody.Set collisionDetectionMode = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_centerOfMass_Vector3
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_centerOfMass
+    parameterTypeNames:
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Rigidbody.Set centerOfMass = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_inertiaTensor_Vector3
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_inertiaTensor
+    parameterTypeNames:
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Rigidbody.Set inertiaTensor = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_detectCollisions_Boolean
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_detectCollisions
+    parameterTypeNames:
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.Set detectCollisions = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_position_Vector3
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_position
+    parameterTypeNames:
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Rigidbody.Set position = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_interpolation_RigidbodyInterpolation
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_interpolation
+    parameterTypeNames:
+    - UnityEngine.RigidbodyInterpolation, UnityEngine.PhysicsModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    niceName: Rigidbody.Set interpolation = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_solverIterations_Int32
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_solverIterations
+    parameterTypeNames:
+    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.Set solverIterations = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_sleepThreshold_Single
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_sleepThreshold
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.Set sleepThreshold = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_maxAngularVelocity_Single
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_maxAngularVelocity
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.Set maxAngularVelocity = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_MovePosition_Vector3
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: MovePosition
+    parameterTypeNames:
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Rigidbody.MovePosition (position)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_Sleep_
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: Sleep
+    parameterTypeNames: []
+    niceName: Rigidbody.Sleep ()
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_WakeUp_
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: WakeUp
+    parameterTypeNames: []
+    niceName: Rigidbody.WakeUp ()
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_ResetCenterOfMass_
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: ResetCenterOfMass
+    parameterTypeNames: []
+    niceName: Rigidbody.ResetCenterOfMass ()
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_ResetInertiaTensor_
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: ResetInertiaTensor
+    parameterTypeNames: []
+    niceName: Rigidbody.ResetInertiaTensor ()
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_solverVelocityIterations_Int32
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_solverVelocityIterations
+    parameterTypeNames:
+    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.Set solverVelocityIterations = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_sleepVelocity_Single
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_sleepVelocity
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.Set sleepVelocity = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_sleepAngularVelocity_Single
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_sleepAngularVelocity
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.Set sleepAngularVelocity = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_useConeFriction_Boolean
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_useConeFriction
+    parameterTypeNames:
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.Set useConeFriction = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_solverIterationCount_Int32
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_solverIterationCount
+    parameterTypeNames:
+    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.Set solverIterationCount = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_set_solverVelocityIterationCount_Int32
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_solverVelocityIterationCount
+    parameterTypeNames:
+    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.Set solverVelocityIterationCount = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_AddForce_Vector3_ForceMode
     type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -1430,16 +1592,6 @@ MonoBehaviour:
       PublicKeyToken=null
     niceName: Rigidbody.AddForce (force)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_AddForce_Single_Single_Single
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: AddForce
-    parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.AddForce (x, y, z)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_AddForce_Single_Single_Single_ForceMode
     type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -1451,6 +1603,16 @@ MonoBehaviour:
     - UnityEngine.ForceMode, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     niceName: Rigidbody.AddForce (x, y, z, mode)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_AddForce_Single_Single_Single
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: AddForce
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.AddForce (x, y, z)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_AddRelativeForce_Vector3_ForceMode
     type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
@@ -1472,16 +1634,6 @@ MonoBehaviour:
       PublicKeyToken=null
     niceName: Rigidbody.AddRelativeForce (force)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_AddRelativeForce_Single_Single_Single
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: AddRelativeForce
-    parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.AddRelativeForce (x, y, z)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_AddRelativeForce_Single_Single_Single_ForceMode
     type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -1493,6 +1645,16 @@ MonoBehaviour:
     - UnityEngine.ForceMode, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     niceName: Rigidbody.AddRelativeForce (x, y, z, mode)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_AddRelativeForce_Single_Single_Single
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: AddRelativeForce
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.AddRelativeForce (x, y, z)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_AddTorque_Vector3_ForceMode
     type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
@@ -1514,16 +1676,6 @@ MonoBehaviour:
       PublicKeyToken=null
     niceName: Rigidbody.AddTorque (torque)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_AddTorque_Single_Single_Single
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: AddTorque
-    parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.AddTorque (x, y, z)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_AddTorque_Single_Single_Single_ForceMode
     type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -1535,6 +1687,16 @@ MonoBehaviour:
     - UnityEngine.ForceMode, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     niceName: Rigidbody.AddTorque (x, y, z, mode)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_AddTorque_Single_Single_Single
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: AddTorque
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.AddTorque (x, y, z)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_AddRelativeTorque_Vector3_ForceMode
     type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
@@ -1556,16 +1718,6 @@ MonoBehaviour:
       PublicKeyToken=null
     niceName: Rigidbody.AddRelativeTorque (torque)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_AddRelativeTorque_Single_Single_Single
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: AddRelativeTorque
-    parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.AddRelativeTorque (x, y, z)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_AddRelativeTorque_Single_Single_Single_ForceMode
     type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -1577,6 +1729,16 @@ MonoBehaviour:
     - UnityEngine.ForceMode, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     niceName: Rigidbody.AddRelativeTorque (x, y, z, mode)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEnginePhysicsModule_Rigidbody_AddRelativeTorque_Single_Single_Single
+    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: AddRelativeTorque
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Rigidbody.AddRelativeTorque (x, y, z)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_AddForceAtPosition_Vector3_Vector3_ForceMode
     type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
@@ -1641,166 +1803,13 @@ MonoBehaviour:
     - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     niceName: Rigidbody.AddExplosionForce (explosionForce, explosionPosition, explosionRadius)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_centerOfMass_Vector3
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_centerOfMass
-    parameterTypeNames:
-    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    niceName: Rigidbody.Set centerOfMass = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_inertiaTensor_Vector3
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_inertiaTensor
-    parameterTypeNames:
-    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    niceName: Rigidbody.Set inertiaTensor = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_detectCollisions_Boolean
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_detectCollisions
-    parameterTypeNames:
-    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.Set detectCollisions = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_useConeFriction_Boolean
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_useConeFriction
-    parameterTypeNames:
-    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.Set useConeFriction = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_position_Vector3
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_position
-    parameterTypeNames:
-    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    niceName: Rigidbody.Set position = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_MovePosition_Vector3
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: MovePosition
-    parameterTypeNames:
-    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    niceName: Rigidbody.MovePosition (position)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_interpolation_RigidbodyInterpolation
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_interpolation
-    parameterTypeNames:
-    - UnityEngine.RigidbodyInterpolation, UnityEngine.PhysicsModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    niceName: Rigidbody.Set interpolation = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_Sleep_
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: Sleep
-    parameterTypeNames: []
-    niceName: Rigidbody.Sleep ()
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_WakeUp_
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: WakeUp
-    parameterTypeNames: []
-    niceName: Rigidbody.WakeUp ()
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_ResetCenterOfMass_
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: ResetCenterOfMass
-    parameterTypeNames: []
-    niceName: Rigidbody.ResetCenterOfMass ()
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_ResetInertiaTensor_
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: ResetInertiaTensor
-    parameterTypeNames: []
-    niceName: Rigidbody.ResetInertiaTensor ()
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_solverIterations_Int32
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_solverIterations
-    parameterTypeNames:
-    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.Set solverIterations = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_solverIterationCount_Int32
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_solverIterationCount
-    parameterTypeNames:
-    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.Set solverIterationCount = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_solverVelocityIterations_Int32
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_solverVelocityIterations
-    parameterTypeNames:
-    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.Set solverVelocityIterations = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_solverVelocityIterationCount_Int32
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_solverVelocityIterationCount
-    parameterTypeNames:
-    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.Set solverVelocityIterationCount = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_sleepVelocity_Single
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_sleepVelocity
-    parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.Set sleepVelocity = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_sleepAngularVelocity_Single
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_sleepAngularVelocity
-    parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.Set sleepAngularVelocity = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_sleepThreshold_Single
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_sleepThreshold
-    parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.Set sleepThreshold = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEnginePhysicsModule_Rigidbody_set_maxAngularVelocity_Single
-    type: UnityEngine.Rigidbody, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_maxAngularVelocity
-    parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Rigidbody.Set maxAngularVelocity = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_set_tag_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: Rigidbody.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1808,7 +1817,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: Rigidbody.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1818,7 +1827,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: Rigidbody.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1826,7 +1835,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: Rigidbody.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1836,7 +1845,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: Rigidbody.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1844,7 +1853,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: Rigidbody.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1854,7 +1863,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: Rigidbody.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1862,7 +1871,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: Rigidbody.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysicsModule_Rigidbody_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -1871,7 +1880,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: Rigidbody.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Rigidbody2D_set_position_Vector2
     type: UnityEngine.Rigidbody2D, UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral,
@@ -2177,7 +2186,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: Rigidbody2D.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Rigidbody2D_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -2185,7 +2194,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: Rigidbody2D.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Rigidbody2D_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -2195,7 +2204,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: Rigidbody2D.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Rigidbody2D_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -2203,7 +2212,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: Rigidbody2D.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Rigidbody2D_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -2213,7 +2222,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: Rigidbody2D.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Rigidbody2D_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -2221,7 +2230,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: Rigidbody2D.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Rigidbody2D_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -2231,7 +2240,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: Rigidbody2D.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Rigidbody2D_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -2239,7 +2248,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: Rigidbody2D.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEnginePhysics2DModule_Rigidbody2D_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -2248,7 +2257,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: Rigidbody2D.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animator_SetFloat_String_Single
     type: UnityEngine.Animator, UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral,
@@ -3004,7 +3013,7 @@ MonoBehaviour:
     name: set_enabled
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Behaviour.Set enabled = (value)
+    niceName: Animator.Set enabled = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animator_set_tag_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3012,7 +3021,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: Animator.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animator_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3020,7 +3029,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: Animator.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animator_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3030,7 +3039,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: Animator.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animator_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3038,7 +3047,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: Animator.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animator_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3048,7 +3057,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: Animator.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animator_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3056,7 +3065,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: Animator.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animator_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3066,7 +3075,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: Animator.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animator_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3074,7 +3083,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: Animator.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animator_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3083,7 +3092,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: Animator.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAudioModule_AudioSource_set_volume_Single
     type: UnityEngine.AudioSource, UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral,
@@ -3398,7 +3407,7 @@ MonoBehaviour:
     name: set_enabled
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Behaviour.Set enabled = (value)
+    niceName: AudioSource.Set enabled = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAudioModule_AudioSource_set_tag_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3406,7 +3415,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: AudioSource.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAudioModule_AudioSource_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3414,7 +3423,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: AudioSource.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAudioModule_AudioSource_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3424,7 +3433,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: AudioSource.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAudioModule_AudioSource_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3432,7 +3441,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: AudioSource.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAudioModule_AudioSource_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3442,7 +3451,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: AudioSource.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAudioModule_AudioSource_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3450,7 +3459,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: AudioSource.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAudioModule_AudioSource_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3460,7 +3469,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: AudioSource.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAudioModule_AudioSource_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3468,7 +3477,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: AudioSource.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAudioModule_AudioSource_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3477,48 +3486,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Camera_set_targetDisplay_Int32
-    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_targetDisplay
-    parameterTypeNames:
-    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Camera.Set targetDisplay = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Camera_Render_
-    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: Render
-    parameterTypeNames: []
-    niceName: Camera.Render ()
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Camera_RenderWithShader_Shader_String
-    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: RenderWithShader
-    parameterTypeNames:
-    - UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Camera.RenderWithShader (shader, replacementTag)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Camera_RenderDontRestore_
-    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: RenderDontRestore
-    parameterTypeNames: []
-    niceName: Camera.RenderDontRestore ()
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Camera_CopyFrom_Camera
-    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: CopyFrom
-    parameterTypeNames:
-    - UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    niceName: Camera.CopyFrom (other)
+    niceName: AudioSource.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_set_nearClipPlane_Single
     type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3552,6 +3520,13 @@ MonoBehaviour:
     - UnityEngine.RenderingPath, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     niceName: Camera.Set renderingPath = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_Reset_
+    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: Reset
+    parameterTypeNames: []
+    niceName: Camera.Reset ()
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_set_allowHDR_Boolean
     type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3758,6 +3733,40 @@ MonoBehaviour:
     parameterTypeNames: []
     niceName: Camera.ResetReplacementShader ()
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_set_usePhysicalProperties_Boolean
+    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_usePhysicalProperties
+    parameterTypeNames:
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Camera.Set usePhysicalProperties = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_set_sensorSize_Vector2
+    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_sensorSize
+    parameterTypeNames:
+    - UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Camera.Set sensorSize = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_set_lensShift_Vector2
+    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_lensShift
+    parameterTypeNames:
+    - UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Camera.Set lensShift = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_set_focalLength_Single
+    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_focalLength
+    parameterTypeNames:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Camera.Set focalLength = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_set_targetTexture_RenderTexture
     type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -3766,6 +3775,14 @@ MonoBehaviour:
     - UnityEngine.RenderTexture, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     niceName: Camera.Set targetTexture = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_set_targetDisplay_Int32
+    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_targetDisplay
+    parameterTypeNames:
+    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Camera.Set targetDisplay = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_set_useJitteredProjectionMatrixForTransparentRendering_Boolean
     type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3837,6 +3854,39 @@ MonoBehaviour:
     parameterTypeNames: []
     niceName: Camera.ResetStereoViewMatrices ()
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_Render_
+    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: Render
+    parameterTypeNames: []
+    niceName: Camera.Render ()
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_RenderWithShader_Shader_String
+    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: RenderWithShader
+    parameterTypeNames:
+    - UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: Camera.RenderWithShader (shader, replacementTag)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_RenderDontRestore_
+    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: RenderDontRestore
+    parameterTypeNames: []
+    niceName: Camera.RenderDontRestore ()
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_CopyFrom_Camera
+    type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: CopyFrom
+    parameterTypeNames:
+    - UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: Camera.CopyFrom (other)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_RemoveCommandBuffers_CameraEvent
     type: UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -3907,7 +3957,7 @@ MonoBehaviour:
     name: set_enabled
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Behaviour.Set enabled = (value)
+    niceName: Camera.Set enabled = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_set_tag_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3915,7 +3965,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: Camera.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3923,7 +3973,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: Camera.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3933,7 +3983,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: Camera.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3941,7 +3991,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: Camera.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3951,7 +4001,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: Camera.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3959,7 +4009,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: Camera.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3969,7 +4019,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: Camera.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3977,7 +4027,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: Camera.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_Camera_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -3986,7 +4036,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: Camera.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animation_set_clip_AnimationClip
     type: UnityEngine.Animation, UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral,
@@ -4197,7 +4247,7 @@ MonoBehaviour:
     name: set_enabled
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Behaviour.Set enabled = (value)
+    niceName: Animation.Set enabled = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animation_set_tag_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4205,7 +4255,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: Animation.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animation_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4213,7 +4263,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: Animation.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animation_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4223,7 +4273,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: Animation.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animation_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4231,7 +4281,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: Animation.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animation_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4241,7 +4291,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: Animation.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animation_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4249,7 +4299,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: Animation.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animation_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4259,7 +4309,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: Animation.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animation_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4267,7 +4317,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: Animation.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineAnimationModule_Animation_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4276,7 +4326,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: Animation.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineParticleSystemModule_ParticleSystem_set_time_Single
     type: UnityEngine.ParticleSystem, UnityEngine.ParticleSystemModule, Version=0.0.0.0,
@@ -4556,7 +4606,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: ParticleSystem.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineParticleSystemModule_ParticleSystem_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4564,7 +4614,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: ParticleSystem.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineParticleSystemModule_ParticleSystem_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4574,7 +4624,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: ParticleSystem.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineParticleSystemModule_ParticleSystem_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4582,7 +4632,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: ParticleSystem.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineParticleSystemModule_ParticleSystem_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4592,7 +4642,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: ParticleSystem.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineParticleSystemModule_ParticleSystem_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4600,7 +4650,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: ParticleSystem.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineParticleSystemModule_ParticleSystem_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4610,7 +4660,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: ParticleSystem.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineParticleSystemModule_ParticleSystem_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4618,7 +4668,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: ParticleSystem.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineParticleSystemModule_ParticleSystem_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4627,7 +4677,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: ParticleSystem.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_time_Single
     type: UnityEngine.TrailRenderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4668,6 +4718,14 @@ MonoBehaviour:
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     niceName: TrailRenderer.Set autodestruct = (value)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_TrailRenderer_set_emitting_Boolean
+    type: UnityEngine.TrailRenderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_emitting
+    parameterTypeNames:
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: TrailRenderer.Set emitting = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_numCornerVertices_Int32
     type: UnityEngine.TrailRenderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4711,6 +4769,16 @@ MonoBehaviour:
       PublicKeyToken=null
     niceName: TrailRenderer.Set endColor = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_TrailRenderer_SetPosition_Int32_Vector3
+    type: UnityEngine.TrailRenderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: SetPosition
+    parameterTypeNames:
+    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: TrailRenderer.SetPosition (index, position)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_generateLightingData_Boolean
     type: UnityEngine.TrailRenderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -4744,6 +4812,37 @@ MonoBehaviour:
     parameterTypeNames: []
     niceName: TrailRenderer.Clear ()
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_TrailRenderer_BakeMesh_Mesh_Boolean
+    type: UnityEngine.TrailRenderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: BakeMesh
+    parameterTypeNames:
+    - UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: TrailRenderer.BakeMesh (mesh, useTransform)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_TrailRenderer_BakeMesh_Mesh_Camera_Boolean
+    type: UnityEngine.TrailRenderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: BakeMesh
+    parameterTypeNames:
+    - UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    - UnityEngine.Camera, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: TrailRenderer.BakeMesh (mesh, camera, useTransform)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_TrailRenderer_AddPosition_Vector3
+    type: UnityEngine.TrailRenderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: AddPosition
+    parameterTypeNames:
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: TrailRenderer.AddPosition (position)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_lightmapTilingOffset_Vector4
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -4751,7 +4850,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Vector4, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Renderer.Set lightmapTilingOffset = (value)
+    niceName: TrailRenderer.Set lightmapTilingOffset = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_lightProbeAnchor_Transform
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4760,7 +4859,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Renderer.Set lightProbeAnchor = (value)
+    niceName: TrailRenderer.Set lightProbeAnchor = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_castShadows_Boolean
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4768,7 +4867,7 @@ MonoBehaviour:
     name: set_castShadows
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set castShadows = (value)
+    niceName: TrailRenderer.Set castShadows = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_motionVectors_Boolean
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4776,7 +4875,7 @@ MonoBehaviour:
     name: set_motionVectors
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set motionVectors = (value)
+    niceName: TrailRenderer.Set motionVectors = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_useLightProbes_Boolean
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4784,7 +4883,7 @@ MonoBehaviour:
     name: set_useLightProbes
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set useLightProbes = (value)
+    niceName: TrailRenderer.Set useLightProbes = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_enabled_Boolean
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4792,7 +4891,7 @@ MonoBehaviour:
     name: set_enabled
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set enabled = (value)
+    niceName: TrailRenderer.Set enabled = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_shadowCastingMode_ShadowCastingMode
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4801,7 +4900,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Rendering.ShadowCastingMode, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    niceName: Renderer.Set shadowCastingMode = (value)
+    niceName: TrailRenderer.Set shadowCastingMode = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_receiveShadows_Boolean
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4809,7 +4908,7 @@ MonoBehaviour:
     name: set_receiveShadows
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set receiveShadows = (value)
+    niceName: TrailRenderer.Set receiveShadows = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_motionVectorGenerationMode_MotionVectorGenerationMode
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4818,7 +4917,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.MotionVectorGenerationMode, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    niceName: Renderer.Set motionVectorGenerationMode = (value)
+    niceName: TrailRenderer.Set motionVectorGenerationMode = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_lightProbeUsage_LightProbeUsage
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4827,7 +4926,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Rendering.LightProbeUsage, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    niceName: Renderer.Set lightProbeUsage = (value)
+    niceName: TrailRenderer.Set lightProbeUsage = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_reflectionProbeUsage_ReflectionProbeUsage
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4836,7 +4935,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Rendering.ReflectionProbeUsage, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    niceName: Renderer.Set reflectionProbeUsage = (value)
+    niceName: TrailRenderer.Set reflectionProbeUsage = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_sortingLayerName_String
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4844,7 +4943,7 @@ MonoBehaviour:
     name: set_sortingLayerName
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set sortingLayerName = (value)
+    niceName: TrailRenderer.Set sortingLayerName = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_sortingLayerID_Int32
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4852,7 +4951,7 @@ MonoBehaviour:
     name: set_sortingLayerID
     parameterTypeNames:
     - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set sortingLayerID = (value)
+    niceName: TrailRenderer.Set sortingLayerID = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_sortingOrder_Int32
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4860,7 +4959,7 @@ MonoBehaviour:
     name: set_sortingOrder
     parameterTypeNames:
     - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set sortingOrder = (value)
+    niceName: TrailRenderer.Set sortingOrder = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_allowOcclusionWhenDynamic_Boolean
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4868,7 +4967,7 @@ MonoBehaviour:
     name: set_allowOcclusionWhenDynamic
     parameterTypeNames:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set allowOcclusionWhenDynamic = (value)
+    niceName: TrailRenderer.Set allowOcclusionWhenDynamic = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_lightProbeProxyVolumeOverride_GameObject
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4877,7 +4976,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Renderer.Set lightProbeProxyVolumeOverride = (value)
+    niceName: TrailRenderer.Set lightProbeProxyVolumeOverride = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_probeAnchor_Transform
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4886,7 +4985,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Renderer.Set probeAnchor = (value)
+    niceName: TrailRenderer.Set probeAnchor = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_lightmapIndex_Int32
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4894,7 +4993,7 @@ MonoBehaviour:
     name: set_lightmapIndex
     parameterTypeNames:
     - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set lightmapIndex = (value)
+    niceName: TrailRenderer.Set lightmapIndex = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_realtimeLightmapIndex_Int32
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4902,7 +5001,7 @@ MonoBehaviour:
     name: set_realtimeLightmapIndex
     parameterTypeNames:
     - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Renderer.Set realtimeLightmapIndex = (value)
+    niceName: TrailRenderer.Set realtimeLightmapIndex = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_lightmapScaleOffset_Vector4
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4911,7 +5010,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Vector4, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Renderer.Set lightmapScaleOffset = (value)
+    niceName: TrailRenderer.Set lightmapScaleOffset = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_realtimeLightmapScaleOffset_Vector4
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4920,7 +5019,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Vector4, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Renderer.Set realtimeLightmapScaleOffset = (value)
+    niceName: TrailRenderer.Set realtimeLightmapScaleOffset = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_material_Material
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4929,7 +5028,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Renderer.Set material = (value)
+    niceName: TrailRenderer.Set material = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_sharedMaterial_Material
     type: UnityEngine.Renderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4938,7 +5037,7 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Renderer.Set sharedMaterial = (value)
+    niceName: TrailRenderer.Set sharedMaterial = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_tag_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4946,7 +5045,7 @@ MonoBehaviour:
     name: set_tag
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.Set tag = (value)
+    niceName: TrailRenderer.Set tag = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_SendMessageUpwards_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4954,7 +5053,7 @@ MonoBehaviour:
     name: SendMessageUpwards
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessageUpwards (methodName)
+    niceName: TrailRenderer.SendMessageUpwards (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_SendMessageUpwards_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4964,7 +5063,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessageUpwards (methodName, options)
+    niceName: TrailRenderer.SendMessageUpwards (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_SendMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4972,7 +5071,7 @@ MonoBehaviour:
     name: SendMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.SendMessage (methodName)
+    niceName: TrailRenderer.SendMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_SendMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4982,7 +5081,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.SendMessage (methodName, options)
+    niceName: TrailRenderer.SendMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_BroadcastMessage_String
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -4990,7 +5089,7 @@ MonoBehaviour:
     name: BroadcastMessage
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Component.BroadcastMessage (methodName)
+    niceName: TrailRenderer.BroadcastMessage (methodName)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_BroadcastMessage_String_SendMessageOptions
     type: UnityEngine.Component, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -5000,7 +5099,7 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Component.BroadcastMessage (methodName, options)
+    niceName: TrailRenderer.BroadcastMessage (methodName, options)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_name_String
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -5008,7 +5107,7 @@ MonoBehaviour:
     name: set_name
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    niceName: TrailRenderer.Set name = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_TrailRenderer_set_hideFlags_HideFlags
     type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -5017,37 +5116,30 @@ MonoBehaviour:
     parameterTypeNames:
     - UnityEngine.HideFlags, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    niceName: Object.Set hideFlags = (value)
+    niceName: TrailRenderer.Set hideFlags = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Light_get_enabled_
-    type: UnityEngine.Behaviour, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+  - className: UnityEngineCoreModule_Transform_get_hasChanged_
+    type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    name: get_enabled
+    name: get_hasChanged
     parameterTypeNames: []
-    niceName: Behaviour.get_enabled ()
+    niceName: Transform.get_hasChanged ()
     returnType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_GameObject_set_name_String
-    type: UnityEngine.Object, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+  - className: UnityEngineCoreModule_GameObject_get_active_
+    type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    name: set_name
+    name: get_active
+    parameterTypeNames: []
+    niceName: GameObject.get_active ()
+    returnType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_GameObject_set_layer_Int32
+    type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: set_layer
     parameterTypeNames:
-    - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: Object.Set name = (value)
+    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: GameObject.Set layer = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: DifferentMethodsUnivents_Observer_Trigger_
-    type: DifferentMethods.Univents.Observer, DifferentMethods.Univents, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    name: Trigger
-    parameterTypeNames: []
-    niceName: Observer.Trigger ()
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_Camera_get_enabled_
-    type: UnityEngine.Behaviour, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: get_enabled
-    parameterTypeNames: []
-    niceName: Behaviour.get_enabled ()
-    returnType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - className: UnityEngineCoreModule_GameObject_CompareTag_String
     type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -5056,43 +5148,19 @@ MonoBehaviour:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     niceName: GameObject.CompareTag (tag)
     returnType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_GameObject_SetActive_Boolean
-    type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+  - className: AssemblyCSharp_FiniteStateMachine_Log_String
+    type: FSM.FiniteStateMachine, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    name: SetActive
-    parameterTypeNames:
-    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: GameObject.SetActive (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineParticleSystemModule_ParticleSystemRenderer_set_enableGPUInstancing_Boolean
-    type: UnityEngine.ParticleSystemRenderer, UnityEngine.ParticleSystemModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    name: set_enableGPUInstancing
-    parameterTypeNames:
-    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: ParticleSystemRenderer.Set enableGPUInstancing = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_GameObject_set_active_Boolean
-    type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    name: set_active
-    parameterTypeNames:
-    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: GameObject.Set active = (value)
-    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: UnityEngineCoreModule_GameObject_BroadcastMessage_String
-    type: GameObject
-    name: BroadcastMessage
+    name: Log
     parameterTypeNames:
     - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: GameObject.BroadcastMessage (methodName)
+    niceName: FiniteStateMachine.Log (msg)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  - className: AssemblyCSharp_OverheadCamera_Shake_Single_Single
-    type: ShmupCreator.OverheadCamera, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  - className: UnityEngineCoreModule_GameObject_set_isStatic_Boolean
+    type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-    name: Shake
+    name: set_isStatic
     parameterTypeNames:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    niceName: OverheadCamera.Shake (amount, duration)
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    niceName: GameObject.Set isStatic = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089

@@ -45,7 +45,7 @@ namespace DifferentMethods.Univents
                     {
                         _instance = AssetDatabase.LoadAssetAtPath<UniventCodeGenerator>(AssetDatabase.GUIDToAssetPath(guids[0]));
                         if (_instance == null)
-                            Debug.LogError("Could not find Univent Code Generator asset.");
+                            Debug.LogError("Could not find Univent Code Generator asset: " + AssetDatabase.GUIDToAssetPath(guids[0]));
                     }
                 }
 
@@ -54,7 +54,7 @@ namespace DifferentMethods.Univents
         }
         public string assemblyName = "Univent";
         Dictionary<string, MetaMethodInfo> methods = new Dictionary<string, MetaMethodInfo>();
-        [HideInInspector] [SerializeField] MetaMethodInfo[] _methods;
+        [SerializeField] MetaMethodInfo[] _methods;
 
 
         [ContextMenu("Init With Common Classes")]

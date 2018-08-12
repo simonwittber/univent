@@ -51,6 +51,11 @@ namespace DifferentMethods.Univents
 
         public void OnAfterDeserialize()
         {
+            if (string.IsNullOrEmpty(metaMethodInfo.name))
+            {
+                enabled = false;
+                return;
+            }
             error = "";
             LoadEncapsulatedMethodCall();
             if (encapsulatedMethodCall == null)

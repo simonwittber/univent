@@ -5,6 +5,7 @@ namespace DifferentMethods.Univents
 {
     /// <summary>
     /// Information about a MethodInfo instance.
+    /// This exists so that MethodInfo can be serialized by Unity.
     /// </summary>
     [System.Serializable]
     public class MetaMethodInfo

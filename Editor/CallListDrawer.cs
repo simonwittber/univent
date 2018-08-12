@@ -5,15 +5,15 @@ using UnityEngine;
 
 namespace DifferentMethods.Univents
 {
+
     public class CallListDrawer : PropertyDrawer
     {
         // [ThreadStatic] public static Call hotCall;
 
 
-        public UnityEngine.Object[] DropArea(Rect position, string text)
+        public UnityEngine.Object[] DropArea(Rect position)
         {
             var e = Event.current;
-            // GUI.Box(position, text);
             switch (e.type)
             {
                 case EventType.DragUpdated:
