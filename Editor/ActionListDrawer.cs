@@ -1,97 +1,69 @@
+using System;
 using System.Linq;
 using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 
 namespace DifferentMethods.Univents
 {
 
-    [CustomPropertyDrawer(typeof(ActionList), true)]
-    public class ActionListDrawer : CallListDrawer
+    [CustomPropertyDrawer(typeof(ActionList))]
+    public class ActionListDrawer : PropertyDrawer
     {
-        System.Action schedule;
+        [NonSerialized] ReorderableList list = null;
+        [NonSerialized] SerializedProperty listProperty;
+        [NonSerialized] GUIContent label;
+        [NonSerialized] SerializedProperty property;
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-
-            var methodCallsProperty = property.FindPropertyRelative("calls");
-            var baseHeight = (methodCallsProperty.arraySize * 38) + 20 + 24;
             var showDetail = property.FindPropertyRelative("showDetail").boolValue;
+            var baseHeight = 48f;
             if (showDetail)
-                baseHeight += 116;
-            return baseHeight;
+                baseHeight += EditorGUIUtility.singleLineHeight * 6;
+            return baseHeight + property.FindPropertyRelative("calls").arraySize * (EditorGUIUtility.singleLineHeight + 4);
         }
 
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        public override void OnGUI(UnityEngine.Rect position, SerializedProperty property, UnityEngine.GUIContent label)
         {
-            var rect = position;
-            position.xMin += 18 * EditorGUI.indentLevel;
-            EditorGUI.indentLevel = 0;
-            var methodCallsProperty = property.FindPropertyRelative("calls");
+            this.property = property;
+            if (list == null)
+            {
+                this.label = label;
+                this.listProperty = property.FindPropertyRelative("calls");
+                this.list = new ReorderableList(property.serializedObject, listProperty);
+                list.drawElementCallback = DrawListElement;
+                list.drawHeaderCallback = DrawHeader;
+            }
+            var showDetail = property.FindPropertyRelative("showDetail").boolValue;
+            list.headerHeight = showDetail ? 18 + EditorGUIUtility.singleLineHeight * 7 : EditorGUIUtility.singleLineHeight;
+            list.DoList(position);
+        }
 
-
-            if (methodCallsProperty.arraySize > 0)
-                GUI.Box(position, GUIContent.none);
-
-            DrawHeaderButtons(position, label, property);
-            position.y += 16;
+        private void DrawHeader(Rect rect)
+        {
+            rect.x += 8;
+            var showDetail = property.FindPropertyRelative("showDetail");
+            showDetail.boolValue = EditorGUI.Foldout(rect, showDetail.boolValue, label);
             if (property.FindPropertyRelative("showDetail").boolValue)
             {
-                DrawDetailControls(position, property);
-                position.y += 116;
+                rect.y += EditorGUIUtility.singleLineHeight;
+                DrawDetailControls(rect);
             }
-            EditorGUI.BeginProperty(position, label, property);
-            // var indent = EditorGUI.indentLevel;
-            // EditorGUI.indentLevel = 0;
-
-            position.height = 36;
-            var ev = Event.current;
-            var count = methodCallsProperty.arraySize;
-            position.xMax -= 24;
-            var deleteIndex = -1;
-            for (var i = 0; i < count; i++)
-            {
-                EditorGUI.PropertyField(position, methodCallsProperty.GetArrayElementAtIndex(i));
-                var button = new Rect(position.xMax + 4, -10 + position.y + position.height / 2, 20, 20);
-                GUI.color = Color.red;
-                if (GUI.Button(button, new GUIContent("", "Delete"), EditorStyles.radioButton))
-                    deleteIndex = i;
-                GUI.color = Color.white;
-                position.y = position.yMax + 4;
-            }
-            if (deleteIndex >= 0)
-            {
-                methodCallsProperty.DeleteArrayElementAtIndex(deleteIndex);
-                deleteIndex = -1;
-                methodCallsProperty.serializedObject.ApplyModifiedProperties();
-            }
-            position.xMax += 24;
-            DrawFooterButtons(rect, methodCallsProperty);
-            var dropped = DropArea(rect);
-            if (dropped != null)
-            {
-
-                EditorApplication.delayCall += () =>
-                {
-                    foreach (var i in dropped)
-                    {
-                        var idx = methodCallsProperty.arraySize;
-                        methodCallsProperty.InsertArrayElementAtIndex(idx);
-                        methodCallsProperty.serializedObject.ApplyModifiedProperties();
-                        var p = methodCallsProperty.GetArrayElementAtIndex(idx);
-                        p.FindPropertyRelative("gameObject").objectReferenceValue = i;
-                    }
-                };
-            }
-            EditorGUI.EndProperty();
         }
 
-        void DrawDetailControls(Rect position, SerializedProperty property)
+        void DrawListElement(Rect rect, int index, bool isActive, bool isFocused)
         {
-            position.height = 114;
-            position.x += 20;
-            position.width -= 23;
-            GUI.Box(position, GUIContent.none);
-            position.height = 16;
+            var r = new Rect(rect.x, rect.y + 2, rect.width - 20, EditorGUIUtility.singleLineHeight);
+            EditorGUI.PropertyField(r, listProperty.GetArrayElementAtIndex(index), GUIContent.none);
+        }
+
+        void DrawDetailControls(Rect position)
+        {
+            // position.x += 8;
+            position.width -= 16;
+
+            position.height = EditorGUIUtility.singleLineHeight;
             EditorGUI.PropertyField(position, property.FindPropertyRelative("invokeOnce"));
             position.y += position.height + 3;
             EditorGUI.PropertyField(position, property.FindPropertyRelative("probability"));
@@ -105,46 +77,6 @@ namespace DifferentMethods.Univents
             EditorGUI.PropertyField(position, property.FindPropertyRelative("repeatDelay"));
         }
 
-        void DrawFooterButtons(Rect position, SerializedProperty methodCalls)
-        {
-            position.x = position.xMax - 20;
-            position.y = position.yMax - 20;
-            position.height = 20;
-            position.width = 20;
-            GUI.color = Color.green;
-            if (GUI.Button(position, new GUIContent("", "Click to add another call."), EditorStyles.radioButton))
-            {
-                var idx = methodCalls.arraySize;
-                methodCalls.InsertArrayElementAtIndex(idx);
-                methodCalls.serializedObject.ApplyModifiedProperties();
-            }
-
-            GUI.color = Color.white;
-
-        }
-
-
-        void DrawHeaderButtons(Rect position, GUIContent label, SerializedProperty property)
-        {
-
-            GUI.color = Color.white;
-            if (property.FindPropertyRelative("calls").arraySize == 0)
-            {
-                EditorGUI.HelpBox(position, $"Drop Gameobjects here to setup {label.text}.", MessageType.Warning);
-            }
-            else
-            {
-                position.height = 18;
-                label.text += " :";
-                EditorGUI.LabelField(position, label, EditorStyles.label);
-                position.x += position.xMax - 72;
-                position.width = 72;
-                var showDetail = property.FindPropertyRelative("showDetail");
-                showDetail.boolValue = EditorGUI.Foldout(position, showDetail.boolValue, new GUIContent("Options", "Click to view more options."));
-            }
-            GUI.color = Color.white;
-
-        }
 
     }
 

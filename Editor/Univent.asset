@@ -5164,3 +5164,20 @@ MonoBehaviour:
     - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     niceName: GameObject.Set isStatic = (value)
     returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_GameObject_BroadcastMessage_String_SendMessageOptions
+    type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: BroadcastMessage
+    parameterTypeNames:
+    - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    - UnityEngine.SendMessageOptions, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    niceName: GameObject.BroadcastMessage (methodName, options)
+    returnType: System.Void, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - className: UnityEngineCoreModule_Camera_get_enabled_
+    type: UnityEngine.Behaviour, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    name: get_enabled
+    parameterTypeNames: []
+    niceName: Camera.get_enabled ()
+    returnType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089

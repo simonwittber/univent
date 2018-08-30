@@ -15,7 +15,7 @@ namespace DifferentMethods.Univents
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return 32;
+            return EditorGUIUtility.singleLineHeight;
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -26,22 +26,25 @@ namespace DifferentMethods.Univents
                 EditorGUI.HelpBox(position, error.stringValue, MessageType.Error);
                 return;
             }
+            var width = position.width;
             GUI.Box(position, GUIContent.none);
-            position.y += 1;
-            position.x += 1;
+            // position.y += 1;
+            // position.x += 1;
             EditorGUI.BeginProperty(position, label, property);
             var indent = EditorGUI.indentLevel;
             // EditorGUI.indentLevel = 0;
-            var gameObject = DrawGameObjectField(position, property);
-            DrawMethodSelector(position, property, gameObject);
-            position.y += 18;
-            position.height = 16;
+            var rect = position;
+            rect.width = width * 0.2f;
+            var gameObject = DrawGameObjectField(rect, property);
+            rect.x += rect.width;
+            rect.width = width * 0.25f;
+            DrawMethodSelector(rect, property, gameObject);
             var metaMethodInfoProperty = property.FindPropertyRelative("metaMethodInfo");
-            position.x += 128;
-            position.width -= 128;
+            rect.x += rect.width;
+            rect.width = width * 0.55f;
             using (var cc = new EditorGUI.ChangeCheckScope())
             {
-                DrawFields(position, property, metaMethodInfoProperty);
+                DrawFields(rect, property, metaMethodInfoProperty);
                 if (cc.changed)
                 {
                     EditorUtility.SetDirty(property.serializedObject.targetObject);
@@ -68,7 +71,7 @@ namespace DifferentMethods.Univents
             if (mi == null) return;
             var hotCall = property.GetTargetObject() as Call;
             var arguments = hotCall.arguments;
-            GUI.Box(position, GUIContent.none);
+            // GUI.Box(position, GUIContent.none);
             foreach (var p in mi.GetParameters())
             {
                 var nameLabel = new GUIContent($"{p.Name}: ");
@@ -87,10 +90,8 @@ namespace DifferentMethods.Univents
 
         void DrawMethodSelector(Rect position, SerializedProperty property, GameObject gameObject)
         {
-            position.x += 128;
-            position.width -= 128;
-            position.height = 18;
-            var content = new GUIContent(property.FindPropertyRelative("metaMethodInfo").FindPropertyRelative("niceName").stringValue);
+            var niceName = property.FindPropertyRelative("metaMethodInfo").FindPropertyRelative("niceName").stringValue;
+            var content = new GUIContent(niceName, niceName);
             if (EditorGUI.DropdownButton(position, content, FocusType.Passive))
             {
                 var menu = CreateMenu(gameObject, property);
@@ -100,8 +101,6 @@ namespace DifferentMethods.Univents
 
         GameObject DrawGameObjectField(Rect position, SerializedProperty property)
         {
-            position.height = 16;
-            position.width = 128;
             var gameObjectProperty = property.FindPropertyRelative("gameObject");
             EditorGUI.PropertyField(position, gameObjectProperty, GUIContent.none);
             var componentProperty = property.FindPropertyRelative("component");
