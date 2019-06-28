@@ -1,19 +1,20 @@
-using DifferentMethods.Extensions.Serialization;
+
+using Surrogates;
 using UnityEngine;
 
 namespace DifferentMethods.Univents
 {
     [System.Serializable]
-    public class Call
+    public abstract class Call
     {
         public UnityEngine.GameObject gameObject;
         public Component component;
         public MetaMethodInfo metaMethodInfo;
-        public PolySerializer arguments;
+        public PolyDictionary arguments;
         public string error = "";
         protected bool enabled = true;
 
-        public virtual void Invoke() { }
+        public abstract void Invoke();
 
         public string NiceName()
         {
@@ -40,21 +41,20 @@ namespace DifferentMethods.Univents
 
             return sb.ToString();
         }
-
     }
 
-    public abstract class Call<T> : Call, ISerializationCallbackReceiver where T : IEncapsulatedMethodCall
+    public abstract class Call<T> : Call where T : ISurrogate
     {
 
         protected T encapsulatedMethodCall;
         protected abstract void LoadEncapsulatedMethodCall();
 
-        public void OnAfterDeserialize()
+        protected bool LoadSurrogate()
         {
             if (string.IsNullOrEmpty(metaMethodInfo.name))
             {
                 enabled = false;
-                return;
+                return false;
             }
             error = "";
             LoadEncapsulatedMethodCall();
@@ -62,28 +62,40 @@ namespace DifferentMethods.Univents
             {
                 error = $"{metaMethodInfo.niceName} could not be loaded, was it renamed or deleted?";
                 enabled = false;
-                return;
+                return false;
             }
-            foreach (var fi in encapsulatedMethodCall.GetType().GetFields())
+
+            var dsa = encapsulatedMethodCall as DefaultSurrogateAction;
+            if (dsa != null)
             {
-                if (fi.Name == "__component" && fi.FieldType.IsSubclassOf(typeof(Component)) && component != null)
+                dsa.component = component;
+                dsa.gameObject = gameObject;
+                var parameters = dsa.methodInfo.GetParameters();
+                dsa.args = new object[parameters.Length];
+                for (var i = 0; i < parameters.Length; i++)
                 {
-                    fi.SetValue(encapsulatedMethodCall, component);
-                }
-                else if (fi.Name == "__component" && fi.FieldType == typeof(UnityEngine.GameObject))
-                {
-                    fi.SetValue(encapsulatedMethodCall, gameObject);
-                }
-                else
-                {
-                    fi.SetValue(encapsulatedMethodCall, arguments.Get(fi.Name, fi.FieldType));
+                    dsa.args[i] = arguments.Get(parameters[i].Name, parameters[i].ParameterType);
                 }
             }
-        }
-
-        public void OnBeforeSerialize()
-        {
-
+            else
+            {
+                foreach (var fi in encapsulatedMethodCall.GetType().GetFields())
+                {
+                    if (fi.Name == "_component" && fi.FieldType.IsSubclassOf(typeof(Component)) && component != null)
+                    {
+                        fi.SetValue(encapsulatedMethodCall, component);
+                    }
+                    else if (fi.Name == "_component" && fi.FieldType == typeof(UnityEngine.GameObject))
+                    {
+                        fi.SetValue(encapsulatedMethodCall, gameObject);
+                    }
+                    else
+                    {
+                        fi.SetValue(encapsulatedMethodCall, arguments.Get(fi.Name, fi.FieldType));
+                    }
+                }
+            }
+            return true;
         }
 
     }

@@ -17,11 +17,8 @@ namespace DifferentMethods.Univents
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            var showDetail = property.FindPropertyRelative("showDetail").boolValue;
-            var baseHeight = 48f;
-            if (showDetail)
-                baseHeight += EditorGUIUtility.singleLineHeight * 6;
-            return baseHeight + property.FindPropertyRelative("calls").arraySize * (EditorGUIUtility.singleLineHeight + 4);
+            if (list == null) return 0;
+            return list.GetHeight();
         }
 
         public override void OnGUI(UnityEngine.Rect position, SerializedProperty property, UnityEngine.GUIContent label)
@@ -37,25 +34,31 @@ namespace DifferentMethods.Univents
             }
             var showDetail = property.FindPropertyRelative("showDetail").boolValue;
             list.headerHeight = showDetail ? 18 + EditorGUIUtility.singleLineHeight * 7 : EditorGUIUtility.singleLineHeight;
+            list.elementHeight = (EditorGUIUtility.singleLineHeight * 2) + 8;
             list.DoList(position);
         }
 
         private void DrawHeader(Rect rect)
         {
-            rect.x += 8;
+            var ox = rect.x;
             var showDetail = property.FindPropertyRelative("showDetail");
-            showDetail.boolValue = EditorGUI.Foldout(rect, showDetail.boolValue, label);
+            GUI.Label(rect, label, EditorStyles.boldLabel);
+            rect.x -= 6;
+            showDetail.boolValue = EditorGUI.Foldout(rect, showDetail.boolValue, GUIContent.none);
             if (property.FindPropertyRelative("showDetail").boolValue)
             {
                 rect.y += EditorGUIUtility.singleLineHeight;
+                rect.x = ox;
                 DrawDetailControls(rect);
             }
         }
 
         void DrawListElement(Rect rect, int index, bool isActive, bool isFocused)
         {
-            var r = new Rect(rect.x, rect.y + 2, rect.width - 20, EditorGUIUtility.singleLineHeight);
-            EditorGUI.PropertyField(r, listProperty.GetArrayElementAtIndex(index), GUIContent.none);
+            var prop = listProperty.GetArrayElementAtIndex(index);
+            var height = EditorGUI.GetPropertyHeight(prop, GUIContent.none);
+            var r = new Rect(rect.x, rect.y + 2, rect.width - 20, height);
+            EditorGUI.PropertyField(r, prop, GUIContent.none);
         }
 
         void DrawDetailControls(Rect position)

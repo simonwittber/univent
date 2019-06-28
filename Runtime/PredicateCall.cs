@@ -1,10 +1,12 @@
 using System;
+using Surrogates;
 
 namespace DifferentMethods.Univents
 {
     [System.Serializable]
-    public class PredicateCall : Call<IEncapsulatedFunction<bool>>
+    public class PredicateCall : Call<ISurrogateAction<bool>>
     {
+
         public bool Result
         {
             get; private set;
@@ -19,28 +21,28 @@ namespace DifferentMethods.Univents
             }
             if (encapsulatedMethodCall == null)
             {
-                error = $"{metaMethodInfo.className} is missing.";
-                enabled = false;
-                Result = false;
-                return;
-            }
-            else
-            {
-                try
+                if (!LoadSurrogate())
                 {
-                    Result = encapsulatedMethodCall.Invoke();
-                }
-                catch (MissingMethodException)
-                {
-                    error = $"{metaMethodInfo.niceName} is missing.";
+                    error = $"{metaMethodInfo.className} is missing.";
                     enabled = false;
+                    Result = false;
+                    return;
                 }
+            }
+            try
+            {
+                Result = encapsulatedMethodCall.Invoke();
+            }
+            catch (MissingMethodException)
+            {
+                error = $"{metaMethodInfo.niceName} is missing.";
+                enabled = false;
             }
         }
 
         protected override void LoadEncapsulatedMethodCall()
         {
-            encapsulatedMethodCall = ClassRegister.CreateInstance<IEncapsulatedFunction<bool>>(metaMethodInfo.className);
+            encapsulatedMethodCall = (ISurrogateAction<bool>)SurrogateRegister.Instance.GetSurrogateAction(metaMethodInfo.GetMethodInfo());
         }
 
     }

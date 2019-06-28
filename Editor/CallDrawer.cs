@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using System.Linq;
+using Surrogates;
 
 namespace DifferentMethods.Univents
 {
@@ -15,32 +16,46 @@ namespace DifferentMethods.Univents
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return EditorGUIUtility.singleLineHeight;
+            var h = EditorGUIUtility.singleLineHeight * 2;
+            if (label != GUIContent.none)
+                h += EditorGUIUtility.singleLineHeight;
+            return h + 4;
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var error = property.FindPropertyRelative("error");
+            var hasLabel = label != GUIContent.none;
             if (Application.isPlaying && error.stringValue != "")
             {
                 EditorGUI.HelpBox(position, error.stringValue, MessageType.Error);
                 return;
             }
-            var width = position.width;
+
+            var width = position.width - 4;
             GUI.Box(position, GUIContent.none);
-            // position.y += 1;
-            // position.x += 1;
+            position.y += 2;
+            position.x += 2;
+            position.height -= 4;
             EditorGUI.BeginProperty(position, label, property);
             var indent = EditorGUI.indentLevel;
             // EditorGUI.indentLevel = 0;
             var rect = position;
+            rect.height = position.height / (hasLabel ? 3 : 2);
+            if (hasLabel)
+            {
+                GUI.Label(rect, label, EditorStyles.boldLabel);
+                rect.y += rect.height;
+            }
             rect.width = width * 0.2f;
+
             var gameObject = DrawGameObjectField(rect, property);
             rect.x += rect.width;
-            rect.width = width * 0.25f;
+            rect.width = width * 0.79f;
             DrawMethodSelector(rect, property, gameObject);
             var metaMethodInfoProperty = property.FindPropertyRelative("metaMethodInfo");
-            rect.x += rect.width;
+            rect.x = position.x + position.width * 0.2f;
+            rect.y += rect.height;
             rect.width = width * 0.55f;
             using (var cc = new EditorGUI.ChangeCheckScope())
             {
@@ -222,7 +237,7 @@ namespace DifferentMethods.Univents
                 {
                     if (IsSupportedMethod(mi, property, hotCall))
                     {
-                        menu.AddItem(new GUIContent(item + ClassRegister.GetNiceName(typeof(GameObject), mi)), false, AddCall(go, property, null, mi));
+                        menu.AddItem(new GUIContent(item + SurrogateEditorExtensions.GetNiceName(typeof(GameObject), mi)), false, AddCall(go, property, null, mi));
                     }
                 }
                 foreach (var c in go.GetComponents(typeof(Component)).OrderBy(x => x.GetType().Name))
@@ -233,7 +248,7 @@ namespace DifferentMethods.Univents
                     {
                         if (IsSupportedMethod(mi, property, hotCall))
                         {
-                            menu.AddItem(new GUIContent(item + ClassRegister.GetNiceName(ct, mi)), false, AddCall(go, property, c, mi));
+                            menu.AddItem(new GUIContent(item + SurrogateEditorExtensions.GetNiceName(ct, mi)), false, AddCall(go, property, c, mi));
                         }
                     }
                 }
@@ -245,9 +260,9 @@ namespace DifferentMethods.Univents
         protected virtual bool IsSupportedMethod(MethodInfo mi, SerializedProperty property, Call hotCall)
         {
             if (hotCall.GetType() == typeof(MethodCall))
-                return UniventCodeGenerator.IsSupportedMethod(mi);
+                return SurrogateEditorExtensions.IsSupportedMethod(mi.DeclaringType, mi);
             if (hotCall.GetType() == typeof(PredicateCall))
-                return UniventCodeGenerator.IsSupportedFunction(mi, typeof(bool));
+                return SurrogateEditorExtensions.IsSupportedMethod(mi.DeclaringType, mi);
             return false;
         }
 
@@ -263,11 +278,11 @@ namespace DifferentMethods.Univents
                 var componentType = component == null ? typeof(GameObject) : component.GetType();
                 property.FindPropertyRelative("component").objectReferenceValue = component;
                 var metaMethodInfo = property.FindPropertyRelative("metaMethodInfo");
-                metaMethodInfo.FindPropertyRelative("className").stringValue = ClassRegister.GetClassName(componentType, mi);
+                metaMethodInfo.FindPropertyRelative("className").stringValue = SurrogateEditorExtensions.GetClassName(componentType, mi);
                 metaMethodInfo.FindPropertyRelative("type").stringValue = componentType.AssemblyQualifiedName;
                 metaMethodInfo.FindPropertyRelative("name").stringValue = mi.Name;
-                metaMethodInfo.FindPropertyRelative("niceName").stringValue = ClassRegister.GetNiceName(componentType, mi);
-                var typeNames = ClassRegister.GetParameterTypeNames(mi);
+                metaMethodInfo.FindPropertyRelative("niceName").stringValue = SurrogateEditorExtensions.GetNiceName(componentType, mi);
+                var typeNames = SurrogateEditorExtensions.GetParameterTypeNames(mi);
                 var typeNamesProperty = metaMethodInfo.FindPropertyRelative("parameterTypeNames");
                 typeNamesProperty.ClearArray();
                 foreach (var typeName in typeNames)
@@ -276,7 +291,7 @@ namespace DifferentMethods.Univents
                     typeNamesProperty.GetArrayElementAtIndex(typeNamesProperty.arraySize - 1).stringValue = typeName;
                 }
                 property.serializedObject.ApplyModifiedProperties();
-                UniventCodeGenerator.Instance.AddMethod(componentType, mi);
+                // UniventCodeGenerator.Instance.AddMethod(componentType, mi);
             };
 
         }
