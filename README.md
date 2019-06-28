@@ -7,5 +7,5 @@ It allows any combination of primitive types and Unity objects as function param
 
 To use in your project, clone it as a submodule somewhere in your Assets folder.
 
-```git submodule add https://github.com/simonwittber/univent Univent```
+```git subtree add --prefix {YOUR FOLDER} https://github.com/simonwittber/univent master```
 
